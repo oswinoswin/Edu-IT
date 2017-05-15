@@ -43,3 +43,30 @@ Template.body.events({
         target.text.value = '';
     },
 });
+
+
+//codeMirror
+Template.EditorPage.helpers({
+
+    "editorOptions": function() {
+        return {
+            lineNumbers: true,
+            mode: "javascript"
+        }
+    },
+
+    "editorCode": function() {
+        return "Code to show in editor";
+    }
+
+});
+
+Template.EditorPage.events({
+
+    "some event": function(e, t) {
+        var code = t.find("#some-id").value;
+        alert(code);
+    }
+
+});
+

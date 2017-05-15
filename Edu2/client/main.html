@@ -56,6 +56,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    {{>EditorPage}}
 
 
                     {{#if currentUser}}
@@ -81,6 +82,12 @@
 
 
 </body>
+
+<template name="EditorPage">
+
+    {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
+
+</template>
 
 <template name="hello">
   <button>Click Me</button>
