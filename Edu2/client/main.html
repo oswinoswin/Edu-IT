@@ -3,27 +3,11 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Edu-IT
-            </a>
-        </div>
-        <div class="navbar-right">{{> loginButtons}}</div>
-    </div>
-</nav>
-
-
-
-
-
-
+    {{>NavBar}}
     <!-- Page Content -->
-
         <div class="container-fluid">
             <div class="row">
+
                 <ul class="my-sidebar list-group col-lg-2 col-md-2">
                     <li class="list-group-item">
                         <h2 class="my-heading" >
@@ -32,25 +16,42 @@
                     </li>
 
                     {{#each modules}}
-                        <a style="color:#c0c0c0" href="#" class="menu-item list-group-item"> {{> module}} </a>
+                        <a style="color:#c0c0c0" href="/one" class="menu-item list-group-item"> {{> module}} </a>
                     {{/each}}
                 </ul>
 
                 <div class="col-lg-10 col-md-10">
 
+                    {{#if currentUser}}
+                        <p>
+                            You are logged in!
+                        </p>
+
+                        <div>
+                            <form class="new-task">
+                                <input type="text" name="text" placeholder="Type to add new tasks" />
+                            </form>
+                        </div>
+
+                        <div>
+                            {{#each tasks}}
+                                {{> task}}
+                            {{/each}}
+                        </div>
+
+
+                    {{/if}}
                     {{>EditorPage}}
 
 
-                    {{#if currentUser}}
-                        <h1>
-                            You are logged in!
-                        </h1>
-                        <div>
-                            <form class="new-file">
-                                <input type="file" name="file-to-upload" placeholder="Choose a file" />
-                            </form>
-                        </div>
-                    {{/if}}
+                    <div class="editor">
+
+                        {{> documentList}}
+                        <hr>
+                        {{> documentView}}
+                    </div>
+
+
 
                 </div>
             </div>
@@ -81,4 +82,51 @@
 </template>
 
 
+<template name="NavBar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Edu-IT
+                </a>
+            </div>
+            <div class="navbar-right">{{> loginButtons}}</div>
+        </div>
+    </nav>
+</template>
 
+<template name="documentList">
+    <h1>Welcome to document sharing!</h1>
+    <div class="documents">
+        {{#each documents}}
+            {{> document}}
+        {{/each}}
+    </div>
+
+    <div id="createDocument">
+        Name: <input type="text" id="new-document-name" placeholder="New document" /> <input type="button" id="new-document" value="create"/>
+    </div>
+</template>
+
+<template name="document">
+    <div class="document {{selected}}">
+        <p>
+            {{ name }}
+            <input type="button" id="edit-document" value="Edit"/>
+            <input type="button" id="delete-document" value="Delete"/>
+        </p>
+    </div>
+</template>
+
+<template name="documentView">
+    <div id="container">
+        {{#if selectedDocument}}
+            {{#with selectedDocument}}
+                <div class="display">
+                    <p>{{ name }}</p>
+                    <textarea id="document-text" rows="10" cols="80">{{ text }}</textarea>
+                </div>
+            {{/with}}
+        {{/if}}
+    </div>
+</template>

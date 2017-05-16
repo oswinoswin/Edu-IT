@@ -217,6 +217,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/htmlembedded/htmlembedded.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/smartymixed/smartymixed.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/coffeescript/coffeescript.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/json/1.0.3/web.browser/packages/json.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/properties/properties.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/tiddlywiki/tiddlywiki.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/javascript/javascript.js" />
@@ -224,6 +225,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/smalltalk/smalltalk.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/commonlisp/commonlisp.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/velocity/velocity.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/backbone/1.0.0/web.browser/packages/backbone.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/htmlmixed/htmlmixed.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/ntriples/ntriples.js" />
         <item url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/vbscript/vbscript.js" />
@@ -548,6 +550,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/htmlembedded/htmlembedded.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/smartymixed/smartymixed.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/coffeescript/coffeescript.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/json/1.0.3/web.browser/packages/json.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/properties/properties.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/tiddlywiki/tiddlywiki.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/javascript/javascript.js" />
@@ -555,6 +558,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/smalltalk/smalltalk.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/commonlisp/commonlisp.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/velocity/velocity.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/backbone/1.0.0/web.browser/packages/backbone.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/htmlmixed/htmlmixed.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/ntriples/ntriples.js" />
       <root url="file://$USER_HOME$/.meteor/packages/perak_codemirror/1.3.1/web.browser/lib/codemirror/mode/vbscript/vbscript.js" />
