@@ -1,0 +1,127 @@
+<head>
+  <title>Edu-IT</title>
+</head>
+
+<body>
+    {{>NavBar}}
+    <!-- Page Content -->
+        <div class="container-fluid">
+            <div class="row">
+
+                <ul class="my-sidebar list-group col-lg-2 col-md-2">
+                    <li class="list-group-item">
+                        <h2 class="my-heading" >
+                            Kurs
+                        </h2>
+                    </li>
+
+                    {{#each modules}}
+                        <a style="color:#c0c0c0" href="/one" class="menu-item list-group-item"> {{> module}} </a>
+                    {{/each}}
+                </ul>
+
+                <div class="col-lg-10 col-md-10">
+
+                    {{#if currentUser}}
+                        <p>
+                            You are logged in!
+                        </p>
+
+
+
+                    {{/if}}
+                    <div>
+                        <h1>Syntax coloring works here:</h1>
+                        {{>EditorPage}}
+
+                    </div>
+
+
+
+
+                    <div class="editor">
+
+                        {{> documentList}}
+                        <hr>
+                        {{> documentView}}
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    <!-- /#page-content-wrapper -->
+
+
+<!-- /#wrapper -->
+
+
+
+</body>
+
+<template name="EditorPage">
+
+    {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
+
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="module">
+    <li>{{text}}</li>
+</template>
+
+
+<template name="NavBar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Edu-IT
+                </a>
+            </div>
+            <div class="navbar-right">{{> loginButtons}}</div>
+        </div>
+    </nav>
+</template>
+
+<template name="documentList">
+    <h1>Welcome to document sharing!</h1>
+    <div class="documents">
+        {{#each documents}}
+            {{> document}}
+        {{/each}}
+    </div>
+
+    <div id="createDocument">
+        Name: <input type="text" id="new-document-name" placeholder="New document" /> <input type="button" id="new-document" value="create"/>
+    </div>
+</template>
+
+<template name="document">
+    <div class="document {{selected}}">
+        <p>
+            {{ name }}
+            <input type="button" id="edit-document" value="Edit"/>
+            <input type="button" id="delete-document" value="Delete"/>
+        </p>
+    </div>
+</template>
+
+<template name="documentView">
+    <div id="container">
+        {{#if selectedDocument}}
+            {{#with selectedDocument}}
+                <div class="display">
+                    <p>{{ name }}</p>
+                    <textarea id="document-text" rows="10" cols="80">{{ text }}</textarea>
+                </div>
+            {{/with}}
+        {{/if}}
+    </div>
+</template>
