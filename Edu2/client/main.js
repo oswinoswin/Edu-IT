@@ -2,8 +2,23 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/file-collection.js';
+import {Modules} from '../imports/modules';
 
 import './main.html';
+
+
+Template.body.helpers({
+    modules: [
+        { text: 'Moduł 1' },
+        { text: 'Moduł 2' },
+        { text: 'Moduł 3' },
+        { text: 'Moduł 4' },
+        { text: 'Moduł 5' },
+        { text: 'Moduł 6' },
+        { text: 'Moduł 7' },
+    ],
+});
+
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -64,7 +79,7 @@ Template.EditorPage.helpers({
 Template.EditorPage.events({
 
     "some event": function(e, t) {
-        var code = t.find("#some-id").value;
+        let code = t.find("#some-id").value;
         alert(code);
     }
 

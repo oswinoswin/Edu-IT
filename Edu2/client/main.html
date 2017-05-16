@@ -16,46 +16,28 @@
 </nav>
 
 
-<div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li>
-                <h2 class="my-heading" >
-                    Kurs
-                </h2>
-            </li>
-            <li>
-                <a href="#">Moduł 1</a>
-            </li>
-            <li>
-                <a href="#">Moduł 2</a>
-            </li>
-            <li>
-                <a href="#">Moduł 3</a>
-            </li>
-            <li>
-                <a href="#">Moduł 4</a>
-            </li>
-            <li>
-                <a href="#">Moduł 5</a>
-            </li>
-            <li>
-                <a href="#">Moduł 6</a>
-            </li>
-            <li>
-                <a href="#">Moduł 7</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+
+
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <ul class="my-sidebar list-group col-lg-2 col-md-2">
+                    <li class="list-group-item">
+                        <h2 class="my-heading" >
+                            Kurs
+                        </h2>
+                    </li>
+
+                    {{#each modules}}
+                        <a style="color:#c0c0c0" href="#" class="menu-item list-group-item"> {{> module}} </a>
+                    {{/each}}
+                </ul>
+
+                <div class="col-lg-10 col-md-10">
+
                     {{>EditorPage}}
 
 
@@ -73,10 +55,10 @@
                 </div>
             </div>
         </div>
-    </div>
+
     <!-- /#page-content-wrapper -->
 
-</div>
+
 <!-- /#wrapper -->
 
 
@@ -92,6 +74,10 @@
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="module">
+    <li>{{text}}</li>
 </template>
 
 
