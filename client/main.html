@@ -19,17 +19,12 @@
                         You are logged in!
                     </p>
 
-
-
                 {{/if}}
+
                 <div>
                     <h1>Syntax coloring works here:</h1>
-                    {{>EditorPage}}
-
+                    {{>editorPage}}
                 </div>
-
-
-
 
                 <div class="editor">
 
@@ -38,11 +33,11 @@
                     {{> documentView}}
                 </div>
 
-                {{>addFile}}
-
 
                 {{> Template.dynamic template=template_name }}
 
+
+                {{>EditorPage}}
 
 
             </div>
@@ -50,13 +45,12 @@
     </div>
 
 
-
-
-
-
-
-
 </body>
+<template name="EditorPage">
+
+    <textarea id="myTextarea">{{ text }}</textarea>
+
+</template>
 
 
 
@@ -67,11 +61,7 @@
 </template>
 
 
-<template name="EditorPage">
 
-    {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
-
-</template>
 
 <template name="hello">
   <button>Click Me</button>
@@ -93,38 +83,3 @@
 
 
 
-<template name="documentList">
-    <h1>Welcome to document sharing!</h1>
-    <div class="documents">
-        {{#each documents}}
-            {{> document}}
-        {{/each}}
-    </div>
-
-    <div id="createDocument">
-        Name: <input type="text" id="new-document-name" placeholder="New document" /> <input type="button" id="new-document" value="create"/>
-    </div>
-</template>
-
-<template name="document">
-    <div class="document {{selected}}">
-        <p>
-            {{ name }}
-            <input type="button" id="edit-document" value="Edit"/>
-            <input type="button" id="delete-document" value="Delete"/>
-        </p>
-    </div>
-</template>
-
-<template name="documentView">
-    <div id="container">
-        {{#if selectedDocument}}
-            {{#with selectedDocument}}
-                <div class="display">
-                    <p>{{ name }}</p>
-                    <textarea id="document-text" rows="10" cols="80">{{ text }}</textarea>
-                </div>
-            {{/with}}
-        {{/if}}
-    </div>
-</template>

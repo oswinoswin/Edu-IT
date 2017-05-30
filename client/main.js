@@ -4,8 +4,10 @@ import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/file-collection.js';
 import {Modules} from '../imports/modules.js';
 import {Tasks} from '../imports/tasks.js';
-import {Documents} from '../imports/documents.js';
+
+
 import  '../imports/task.js';
+import  '../imports/editor-page.js';
 
 import './main.html';
 import '../imports/navbar.html';
@@ -36,8 +38,17 @@ Template.body.events({
     "click .hello": function() {
         Session.set("templateName", "hello");
         console.log("hello");
+    },
+
+    "click .editor-page": function() {
+        Session.set("templateName", "editorPage");
+        console.log("editor page");
+    },
+
+    "click .add-file": function() {
+        Session.set("templateName", "addFile");
+        console.log("add file");
     }
-    // ..
 });
 
 Template.leftMenu.helpers({
@@ -98,121 +109,6 @@ Template.body.events({
 });
 
 
-//codeMirror
-Template.EditorPage.helpers({
-
-    "editorOptions": function() {
-        return {
-            lineNumbers: true,
-            mode: "javascript"
-        }
-    },
-
-    "editorCode": function() {
-        return "Write your code here";
-    }
-
-});
-
-Template.EditorPage.events({
-
-    "change": function(e, t) {
-       // let code = t.find("#some-id").value;
-        //alert(code);
-        console.log("change!");
-    }
-
-});
-
-
-
-///documents
-var DocumentsRouter, Router;
-
-DocumentsRouter = Backbone.Router.extend({
-    routes: {
-        ":document_id": "main"
-    },
-    main: function(document_id) {
-        return Session.set("document_id", document_id);
-    },
-    setDocument: function(document_id) {
-        return this.navigate(document_id, true);
-    }
-});
-
-Router = new DocumentsRouter;
-
-Meteor.startup(function() {
-    return Backbone.history.start({
-        pushState: true
-    });
-});
-
-Template.documentList.documents = function() {
-    return Documents.find({}, {
-        sort: {
-            name: 1
-        }
-    });
-};
-
-Template.documentList.events = {
-    'click #new-document': function(e) {
-        var name;
-        name = $('#new-document-name').val();
-        if (name) {
-            return Documents.insert({
-                name: name,
-                text: ""
-            });
-        }
-    }
-};
-
-Template.document.events = {
-    'click #delete-document': function(e) {
-        return Documents.remove(this._id);
-    },
-    'click #edit-document': function(e) {
-        return Router.setDocument(this._id);
-    }
-};
-
-Template.document.selected = function() {
-    if (Session.equals("document_id", this._id)) {
-        return "selected";
-    } else {
-        return "";
-    }
-};
-
-Template.documentView.selectedDocument = function() {
-    var document_id, selected;
-    document_id = Session.get("document_id");
-    selected = Documents.findOne({
-        _id: document_id
-    });
-    if (selected) {
-        $('#document-text').val(selected.text);
-        return selected;
-    }
-};
-
-Template.documentView.events = {
-    'keyup #document-text': function(e) {
-        var mod, sel;
-        sel = {
-            _id: Session.get("document_id")
-        };
-        mod = {
-            $set: {
-                text: $('#document-text').val()
-            }
-        };
-        return Documents.update(sel, mod);
-    }
-};
 
 
 Template.addFile.events({
@@ -232,3 +128,17 @@ Template.addFile.events({
         });
     },
 });
+
+Template.EditorPage.rendered = function() {
+    var editor = CodeMirror.fromTextArea(this.find("#myTextarea"), {
+        lineNumbers: true,
+        mode: "javascript" // set any of supported language modes here
+    });
+}
+
+Template.EditorPage.events =  {
+    'keyup #myTextarea': function(e) {
+        console.log("<3 <3");
+
+    }
+};
