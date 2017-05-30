@@ -4,24 +4,13 @@
 
 <body>
 
-
-
-    {{>NavBar}}
+    {{>navBar}}
     <!-- Page Content -->
     <div class="container-fluid">
         <div class="row">
+            {{>leftMenu}}
 
-            <ul class="my-sidebar list-group col-lg-2 col-md-2">
-                <li class="list-group-item">
-                    <h2 class="my-heading" >
-                        Kurs
-                    </h2>
-                </li>
 
-                {{#each modules}}
-                    <a style="color:#c0c0c0" href="/one" class="menu-item list-group-item"> {{> module}} </a>
-                {{/each}}
-            </ul>
 
             <div class="col-lg-10 col-md-10">
 
@@ -52,6 +41,9 @@
                 {{>addFile}}
 
 
+                {{> Template.dynamic template=template_name }}
+
+
 
             </div>
         </div>
@@ -60,18 +52,13 @@
 
 
 
-    {{> Template.dynamic template=template_name }}
+
 
 
 
 </body>
 
-<template name="index">
 
-
-
-    <!-- /#page-content-wrapper -->
-</template>
 
 <template name="about">
     <div class="h1">
@@ -105,20 +92,6 @@
 </template>
 
 
-<template name="NavBar">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    Edu-IT
-                </a>
-                <a class="navbar-link about" href="#">about</a>
-                <a class="navbar-link hello" href="#">hello</a>
-            </div>
-            <div class="navbar-right">{{> loginButtons}}</div>
-        </div>
-    </nav>
-</template>
 
 <template name="documentList">
     <h1>Welcome to document sharing!</h1>

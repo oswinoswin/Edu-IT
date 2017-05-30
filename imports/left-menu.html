@@ -1,0 +1,13 @@
+<template name="leftMenu">
+    <ul class="my-sidebar list-group col-lg-2 col-md-2">
+        <li class="list-group-item">
+            <h2 class="my-heading" >
+                Kurs
+            </h2>
+        </li>
+
+        {{#each modules}}
+            <a style="color:#c0c0c0" href="#" class="menu-item list-group-item"> {{> module}} </a>
+        {{/each}}
+    </ul>
+</template>

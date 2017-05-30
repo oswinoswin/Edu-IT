@@ -8,6 +8,8 @@ import {Documents} from '../imports/documents.js';
 import  '../imports/task.js';
 
 import './main.html';
+import '../imports/navbar.html';
+import '../imports/left-menu.html';
 
 import '../imports/task.html';
 
@@ -38,7 +40,7 @@ Template.body.events({
     // ..
 });
 
-Template.body.helpers({
+Template.leftMenu.helpers({
     modules: [
         { text: 'Moduł 1' },
         { text: 'Moduł 2' },
