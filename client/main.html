@@ -3,64 +3,82 @@
 </head>
 
 <body>
+
+
+
     {{>NavBar}}
     <!-- Page Content -->
-        <div class="container-fluid">
-            <div class="row">
+    <div class="container-fluid">
+        <div class="row">
 
-                <ul class="my-sidebar list-group col-lg-2 col-md-2">
-                    <li class="list-group-item">
-                        <h2 class="my-heading" >
-                            Kurs
-                        </h2>
-                    </li>
+            <ul class="my-sidebar list-group col-lg-2 col-md-2">
+                <li class="list-group-item">
+                    <h2 class="my-heading" >
+                        Kurs
+                    </h2>
+                </li>
 
-                    {{#each modules}}
-                        <a style="color:#c0c0c0" href="/one" class="menu-item list-group-item"> {{> module}} </a>
-                    {{/each}}
-                </ul>
+                {{#each modules}}
+                    <a style="color:#c0c0c0" href="/one" class="menu-item list-group-item"> {{> module}} </a>
+                {{/each}}
+            </ul>
 
-                <div class="col-lg-10 col-md-10">
+            <div class="col-lg-10 col-md-10">
 
-                    {{#if currentUser}}
-                        <p>
-                            You are logged in!
-                        </p>
-
-
-
-                    {{/if}}
-                    <div>
-                        <h1>Syntax coloring works here:</h1>
-                        {{>EditorPage}}
-
-                    </div>
+                {{#if currentUser}}
+                    <p>
+                        You are logged in!
+                    </p>
 
 
 
-
-                    <div class="editor">
-
-                        {{> documentList}}
-                        <hr>
-                        {{> documentView}}
-                    </div>
-
-                    {{>addFile}}
-
+                {{/if}}
+                <div>
+                    <h1>Syntax coloring works here:</h1>
+                    {{>EditorPage}}
 
                 </div>
+
+
+
+
+                <div class="editor">
+
+                    {{> documentList}}
+                    <hr>
+                    {{> documentView}}
+                </div>
+
+                {{>addFile}}
+
+
+
             </div>
         </div>
+    </div>
 
-    <!-- /#page-content-wrapper -->
 
 
-<!-- /#wrapper -->
+
+    {{> Template.dynamic template=template_name }}
 
 
 
 </body>
+
+<template name="index">
+
+
+
+    <!-- /#page-content-wrapper -->
+</template>
+
+<template name="about">
+    <div class="h1">
+        About template
+    </div>
+</template>
+
 
 <template name="EditorPage">
 
@@ -94,6 +112,8 @@
                 <a class="navbar-brand" href="#">
                     Edu-IT
                 </a>
+                <a class="navbar-link about" href="#">about</a>
+                <a class="navbar-link hello" href="#">hello</a>
             </div>
             <div class="navbar-right">{{> loginButtons}}</div>
         </div>

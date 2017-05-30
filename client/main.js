@@ -12,6 +12,32 @@ import './main.html';
 import '../imports/task.html';
 
 
+Meteor.startup(function () {
+    Session.setDefault("templateName", "index")
+});
+
+Template.body.helpers({
+    template_name: function(){
+        return Session.get("templateName")
+    }
+});
+
+
+Template.body.events({
+    "click .home": function() {
+        Session.set("templateName", "index");
+    },
+    "click .about": function() {
+        Session.set("templateName", "about");
+        console.log("about");
+    },
+    "click .hello": function() {
+        Session.set("templateName", "hello");
+        console.log("hello");
+    }
+    // ..
+});
+
 Template.body.helpers({
     modules: [
         { text: 'Moduł 1' },
