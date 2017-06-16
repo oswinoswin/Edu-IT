@@ -14,30 +14,9 @@
 
             <div class="col-lg-10 col-md-10">
 
-                {{#if currentUser}}
-                    <p>
-                        You are logged in!
-                    </p>
-
-                {{/if}}
-
-                <div>
-                    <h1>Syntax coloring works here:</h1>
-                    {{>editorPage}}
-                </div>
-
-                <div class="editor">
-
-                    {{> documentList}}
-                    <hr>
-                    {{> documentView}}
-                </div>
-
 
                 {{> Template.dynamic template=template_name }}
 
-
-                {{>EditorPage}}
 
 
             </div>
