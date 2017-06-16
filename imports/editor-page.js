@@ -6,20 +6,6 @@ import {Documents} from './documents.js';
 
 import './editor-page.html'
 
-Template.editorPage.helpers({
-
-    "editorOptions": function() {
-        return {
-            lineNumbers: true,
-            mode: "python"
-        }
-    },
-
-    "editorCode": function() {
-        return "Write your code here";
-    }
-
-});
 
 
 
@@ -112,18 +98,28 @@ Template.documentView.helpers({
 });
 
 
-Template.documentView.events = {
-    'keyup #document-text': function(e) {
-        console.log("<3");
+Template.documentView.rendered = function() {
+    var editor = CodeMirror.fromTextArea(document.getElementById("document-text"), {
+        lineNumbers: true,
+        mode: "python"
+    });
+
+    editor.on("change", function() {
+        console.log(editor.getValue());
+        console.log("keyup");
         var mod, sel;
         sel = {
             _id: Session.get("document_id")
         };
         mod = {
             $set: {
-                text: $('#document-text').val()
+                text: editor.getValue()
             }
         };
         return Documents.update(sel, mod);
-    }
+    });
 };
+
+
+
+
