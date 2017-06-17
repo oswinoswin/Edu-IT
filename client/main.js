@@ -2,16 +2,16 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/file-collection.js';
-import {Modules} from '../imports/modules.js';
-import {Tasks} from '../imports/tasks.js';
+import {Modules} from '../imports/collections/modules.js';
+import {Tasks} from '../imports/collections/tasks.js';
 
 
 import  '../imports/task.js';
 import  '../imports/editor-page.js';
 
 import './main.html';
-import '../imports/navbar.html';
-import '../imports/left-menu.html';
+import '../imports/views/navbar.html';
+import '../imports/views/left-menu.html';
 
 import '../imports/task.html';
 

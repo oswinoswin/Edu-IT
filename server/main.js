@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
-import '../imports/modules.js';
-import '../imports/tasks.js';
-import {Documents} from '../imports/documents.js';
+import '../imports/collections/modules.js';
+import '../imports/collections/tasks.js';
+import {Documents} from '../imports/collections/documents.js';
 import {MyFiles} from '../imports/file-collection.js';
 
 Meteor.startup(function() {
