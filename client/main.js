@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import '../imports/accounts-config.js';
-import {MyFiles} from '../imports/file-collection.js';
+import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
 import {Tasks} from '../imports/collections/tasks.js';
 
