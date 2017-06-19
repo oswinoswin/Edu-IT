@@ -8,6 +8,8 @@ import {Tasks} from '../imports/collections/tasks.js';
 
 import  '../imports/task.js';
 import  '../imports/editor-page.js';
+import  '../imports/editor-page.html';
+import  '../imports/collaborative.html';
 
 import './main.html';
 import '../imports/views/navbar.html';
@@ -48,6 +50,11 @@ Template.body.events({
     "click .add-file": function() {
         Session.set("templateName", "addFile");
         console.log("add file");
+    },
+
+    "click .collaborative": function() {
+        Session.set("templateName", "collaborative");
+        console.log("collaborative");
     }
 });
 
