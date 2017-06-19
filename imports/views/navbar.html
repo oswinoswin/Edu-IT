@@ -9,7 +9,11 @@
                 <a class="navbar-link hello" href="#">hello</a>
                 <a class="navbar-link editor-page" href="#">EditorPage</a>
                 <a class="navbar-link add-file" href="#">AddFile</a>
+                <a class="navbar-link collaborative" href="#">Collaborative</a>
             </div>
+            {{#if currentUser}}
+                <p>You are logged in. </p>
+            {{/if}}
             <div class="navbar-right">{{> loginButtons}}</div>
         </div>
     </nav>
