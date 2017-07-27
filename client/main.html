@@ -1,27 +1,27 @@
 <head>
-  <title>Edu-IT</title>
+    <title>Edu-IT</title>
 </head>
 
 <body>
 
-    {{>navBar}}
-    <!-- Page Content -->
-    <div class="container-fluid">
-        <div class="row">
-            {{>leftMenu}}
+{{>navBar}}
+<!-- Page Content -->
+<div class="container-fluid">
+    <div class="row">
+        {{>leftMenu}}
 
 
 
-            <div class="col-lg-10 col-md-10">
+        <div class="col-lg-10 col-md-10">
 
 
-                {{> Template.dynamic template=template_name }}
+            {{> Template.dynamic template=template_name }}
 
 
 
-            </div>
         </div>
     </div>
+</div>
 
 
 </body>
@@ -43,8 +43,8 @@
 
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
 </template>
 
 
@@ -54,11 +54,18 @@
         <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
         <small id="fileHelp" class="form-text text-muted">This is only test version.</small>
     </div>
+    <ul class="file-list">
+        {{#each myfiles}}
+            {{> myfile}}
+        {{/each}}
+    </ul>
 </template>
 
 <template name="module">
-    <li>{{text}}</li>
+    <li class="file-item">{{text}}</li>
 </template>
 
-
+<template name="myfile">
+    <li>{{file_name}}<button class="delete">Usuń</button></li>
+</template>
 

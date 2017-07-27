@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import '../imports/collections/modules.js';
 import '../imports/collections/tasks.js';
 import {Documents} from '../imports/collections/documents.js';
-import {MyFiles} from '../imports/file-collection.js';
+import {MyFiles} from '../imports/collections/myFiles.js';
 
 Meteor.startup(function() {
     if (Documents.find().count() === 0) {
