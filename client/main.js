@@ -2,11 +2,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
-import {Modules} from '../imports/collections/modules.js';
-import {Tasks} from '../imports/collections/tasks.js';
 
 
-import  '../imports/task.js';
+
 import  '../imports/editor-page.js';
 import  '../imports/editor-page.html';
 import  '../imports/collaborative.html';
@@ -67,10 +65,7 @@ Template.leftMenu.helpers({
         { text: 'Moduł 5' },
         { text: 'Moduł 6' },
         { text: 'Moduł 7' },
-    ],
-    tasks() {
-        return Tasks.find({});
-    },
+    ]
 });
 
 
@@ -102,13 +97,6 @@ Template.body.events({
         const target = event.target;
         const text = target.text.value;
 
-        // Insert a task into the collection
-        Tasks.insert({
-            text,
-            createdAt: new Date(), // current time
-            owner: Meteor.userId(),
-            username: Meteor.user().username,
-        });
 
         // Clear form
         target.text.value = '';
