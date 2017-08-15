@@ -35,10 +35,6 @@ Template.body.events({
         Session.set("templateName", "about");
         console.log("about");
     },
-    "click .hello": function() {
-        Session.set("templateName", "hello");
-        console.log("hello");
-    },
 
     "click .editor-page": function() {
         Session.set("templateName", "editorPage");
@@ -66,41 +62,6 @@ Template.leftMenu.helpers({
         { text: 'Moduł 6' },
         { text: 'Moduł 7' },
     ]
-});
-
-
-Template.hello.onCreated(function helloOnCreated() {
-    // counter starts at 0
-    this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-    counter() {
-        return Template.instance().counter.get();
-    },
-});
-
-Template.hello.events({
-    'click button'(event, instance) {
-        // increment the counter when button is clicked
-        instance.counter.set(instance.counter.get() + 1);
-    },
-});
-
-
-Template.body.events({
-    'submit .new-task'(event) {
-        // Prevent default browser form submit
-        event.preventDefault();
-
-        // Get value from form element
-        const target = event.target;
-        const text = target.text.value;
-
-
-        // Clear form
-        target.text.value = '';
-    },
 });
 
 
