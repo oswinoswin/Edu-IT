@@ -8,6 +8,10 @@ body {
     overflow-x: hidden;
 }
 
+.navbar-header{
+    padding-top: 1.5%;
+}
+
 #login-buttons {
     display: block;
     color: black;

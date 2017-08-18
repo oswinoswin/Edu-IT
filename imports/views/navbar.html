@@ -2,12 +2,13 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a id="logo" class="navbar-brand" href="/">
                     Edu-IT
                 </a>
-                <button type="button" class="btn btn-default editor-page">EditorPage</button>
-                <button class="btn btn-default navbar-link add-file" href="#">AddFile</button>
+                <button id="editorPage" type="button" class="btn btn-default editor-page" href="/editorPage">EditorPage</button>
+                <button id="fileUpload" class="btn btn-default navbar-link add-file" href="/fileUpload">AddFile</button>
                 <button class="btn btn-default navbar-link collaborative" href="#">Collaborative</button>
+                <button id="about" class="btn btn-default navbar-link collaborative" href="/about">About</button>
             </div>
             {{#if currentUser}}
                 <p>You are logged in. </p>

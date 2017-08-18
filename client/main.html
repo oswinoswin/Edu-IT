@@ -1,29 +1,25 @@
-<head>
-    <title>Edu-IT</title>
-</head>
+<template name="ApplicationLayout">
+    <head>
+        <title>Edu-IT</title>
+    </head>
 
-<body>
+    <body>
+        {{>navBar}}
+        <!-- Page Content -->
+        <div class="container-fluid">
+            <div class="row">
+                {{>leftMenu}}
 
-{{>navBar}}
-<!-- Page Content -->
-<div class="container-fluid">
-    <div class="row">
-        {{>leftMenu}}
+                <div class="col-lg-10 col-md-10">
 
+                    {{>yield "pageContent"}}
 
-
-        <div class="col-lg-10 col-md-10">
-
-
-            {{> Template.dynamic template=template_name }}
-
-
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </body>
+</template>
 
-
-</body>
 <template name="EditorPage">
 
     <textarea id="myTextarea">{{ text }}</textarea>
@@ -32,39 +28,12 @@
 
 
 
-<template name="about">
-    <div class="h1">
-        About template
-    </div>
-</template>
 
 
-
-
-<template name="hello">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-
-<template name="addFile">
-    <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        <small id="fileHelp" class="form-text text-muted">This is only test version.</small>
-    </div>
-    <ul class="file-list">
-        {{#each myfiles}}
-            {{> myfile}}
-        {{/each}}
-    </ul>
-</template>
 
 <template name="module">
     <li class="file-item">{{text}}</li>
 </template>
 
-<template name="myfile">
-    <li>{{file_name}}<button class="delete">Usuń</button></li>
-</template>
+
 

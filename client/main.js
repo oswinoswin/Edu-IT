@@ -14,6 +14,14 @@ import '../imports/views/navbar.html';
 import '../imports/views/left-menu.html';
 
 import '../imports/task.html';
+import '../imports/about.html'
+import '../imports/pageContent.html'
+import '../imports/routing.js'
+
+
+Router.configure({
+    layoutTemplate: 'ApplicationLayout'
+});
 
 
 Meteor.startup(function () {
@@ -26,31 +34,6 @@ Template.body.helpers({
     }
 });
 
-
-Template.body.events({
-    "click .home": function() {
-        Session.set("templateName", "index");
-    },
-    "click .about": function() {
-        Session.set("templateName", "about");
-        console.log("about");
-    },
-
-    "click .editor-page": function() {
-        Session.set("templateName", "editorPage");
-        console.log("editor page");
-    },
-
-    "click .add-file": function() {
-        Session.set("templateName", "addFile");
-        console.log("add file");
-    },
-
-    "click .collaborative": function() {
-        Session.set("templateName", "collaborative");
-        console.log("collaborative");
-    }
-});
 
 Template.leftMenu.helpers({
     modules: [
@@ -70,7 +53,6 @@ Template.addFile.helpers({
         return MyFiles.find({}, { sort: { createdAt: -1 } });
     },
 });
-
 
 
 Template.addFile.events({

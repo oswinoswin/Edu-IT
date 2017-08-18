@@ -1,13 +1,8 @@
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 import {Documents} from './collections/documents.js';
 
 
-
 import './editor-page.html'
-
-
-
 
 
 ///documents
@@ -27,6 +22,7 @@ DocumentsRouter = Backbone.Router.extend({
 
 
 Router = new DocumentsRouter;
+
 
 Meteor.startup(function() {
     return Backbone.history.start({
