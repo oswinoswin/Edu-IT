@@ -1,18 +1,22 @@
 <template name="fileUpload">
-    <template name="addFile">
-        <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-            <small id="fileHelp" class="form-text text-muted">This is only test version.</small>
-        </div>
-        <ul class="file-list">
-            {{#each myfiles}}
-                {{> myfile}}
-            {{/each}}
-        </ul>
-    </template>
+    <p>File upload</p>
+    {{>addFile}}
 
-    <template name="myfile">
-        <li>{{file_name}}<button class="delete">Usuń</button></li>
-    </template>
+</template>
+
+<template name="addFile">
+    <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+        <small id="fileHelp" class="form-text text-muted">This is only test version.</small>
+    </div>
+    <ul class="file-list">
+        {{#each myfiles}}
+            {{> myfile}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="myfile">
+    <li>{{file_name}}<button class="delete">Usuń</button></li>
 </template>

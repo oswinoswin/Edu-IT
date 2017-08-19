@@ -1,7 +1,12 @@
 import '../imports/pageContent.html'
 import '../imports/views/navbar.html'
-import '../imports/fileUpload.html.html'
+import '../imports/fileUpload.html'
+import '../client/main.html'
 
+Router.route('/', function(){
+    this.layout('ApplicationLayout');
+    this.render('about');
+});
 
 Router.route('/about', function(){
     this.layout('ApplicationLayout');
@@ -18,10 +23,7 @@ Router.route('/fileUpload', function(){
     this.render('fileUpload', {to: 'pageContent'});
 });
 
-Router.route('/', function(){
-    this.layout('ApplicationLayout');
-    this.render('about', {to: 'pageContent'});
-});
+
 
 Template.navBar.events({
     'click #about': function (){
@@ -32,5 +34,8 @@ Template.navBar.events({
     },
     'click #editorPage': function (){
         Router.go('/editorPage');
+    },
+    'click #fileUpload': function (){
+        Router.go('/fileUpload');
     }
 });
