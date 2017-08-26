@@ -29,3 +29,4 @@ mizzao:sharejs-codemirror
 iron:router
 service-configuration
 accounts-google
+force-ssl
