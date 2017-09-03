@@ -61,7 +61,7 @@ Template.addFile.events({
         event.preventDefault();
 
         var file = event.currentTarget.files[0];
-        console.log("add file "+  file.name);
+        console.log("add file "+  file.name + " user " + Meteor.userId());
 
 
         // Insert a file into the collection
@@ -69,6 +69,7 @@ Template.addFile.events({
             file_name: file.name,
             my_file: file,
             createdAt: new Date(), // current time
+            user_id: Meteor.userId(),
         });
     },
     'click .delete'() {
@@ -85,7 +86,7 @@ Template.EditorPage.rendered = function() {
 
 Template.EditorPage.events =  {
     'keyup #myTextarea': function(e) {
-        console.log("<3 <3");
+        console.log("key");
 
     }
 };
