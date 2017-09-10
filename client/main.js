@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
+import {Modules} from '../imports/collections/modules.js';
 
 
 
@@ -10,6 +10,8 @@ import  '../imports/editor-page.html';
 import  '../imports/collaborative.html';
 
 import './main.html';
+import './main.js';
+
 import '../imports/views/navbar.html';
 import '../imports/views/left-menu.html';
 
@@ -17,6 +19,7 @@ import '../imports/task.html';
 import '../imports/about.html'
 import '../imports/pageContent.html'
 import '../imports/routing.js'
+
 
 
 Router.configure({
@@ -36,16 +39,12 @@ Template.body.helpers({
 
 
 Template.leftMenu.helpers({
-    modules: [
-        { text: 'Moduł 1' },
-        { text: 'Moduł 2' },
-        { text: 'Moduł 3' },
-        { text: 'Moduł 4' },
-        { text: 'Moduł 5' },
-        { text: 'Moduł 6' },
-        { text: 'Moduł 7' },
-    ]
+    modules() {
+        return Modules.find({}, {sort: {number: 1}});
+    },
 });
+
+
 
 
 Template.addFile.helpers({

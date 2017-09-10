@@ -33,7 +33,10 @@ Router.route('/modules/:_number', function () {
     this.render('moduleContent', {
         to: 'pageContent',
     });
-});
+},{
+        name: 'module.show'
+    }
+);
 
 Template.moduleContent.helpers({
     number() {
