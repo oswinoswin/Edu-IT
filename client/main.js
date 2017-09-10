@@ -20,6 +20,12 @@ import '../imports/about.html'
 import '../imports/pageContent.html'
 import '../imports/routing.js'
 
+import '../imports/module-content.html';
+
+//let userId = this.userId;
+
+//Roles.addUsersToRoles( userId, [ 'teacher' ] );
+
 
 
 Router.configure({
@@ -76,6 +82,26 @@ Template.addFile.events({
     },
 });
 
+Template.addFileToModule.events({
+    'change #exampleInputFile'(event) {
+        // Prevent default browser form submit
+        event.preventDefault();
+
+        var file = event.currentTarget.files[0];
+        console.log("add file "+  file.name + " user " + Meteor.userId());
+
+
+        // Insert a file into the collection
+        MyFiles.insert({
+            file_name: file.name,
+            my_file: file,
+            createdAt: new Date(), // current time
+            user_id: Meteor.userId(),
+            module_no: Session.get("currentModule"),
+        });
+    },
+});
+
 Template.EditorPage.rendered = function() {
     var editor = CodeMirror.fromTextArea(this.find("#myTextarea"), {
         lineNumbers: true,
@@ -89,3 +115,6 @@ Template.EditorPage.events =  {
 
     }
 };
+
+console.log("Current user " + Meteor.userId());
+//Roles.addUsersToRoles( Meteor.userId(), [ 'teacher' ] );
