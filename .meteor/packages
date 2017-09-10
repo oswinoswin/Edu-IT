@@ -31,3 +31,8 @@ service-configuration
 accounts-google
 force-ssl
 autopublish
+pfafman:filesaver
+udondan:jszip
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs

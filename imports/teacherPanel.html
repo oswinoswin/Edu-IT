@@ -1,7 +1,28 @@
 <template name="teacherPanel">
     <h1>Panel nauczyciela</h1>
-    {{>allFiles}}
+    {{>fileList}}
 </template>
+
+
+
+<template name="fileList">
+
+    <table border="1">
+        <tbody>
+        {{#each theFiles}}
+            <tr>
+                <td>{{uploadedAt}}</td>
+                <td>{{original.name}}</td>
+                <td><a href="{{url}}" class="btn btn-primary">Download</a></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
+
+
+
 
 <template name="allFiles">
     <ul class="file-list">
@@ -12,5 +33,8 @@
 </template>
 
 <template name="currentFile">
-    <li>Moduł: {{module_no}} Pliczek : {{file_name}} Dodany przez: {{user_id}} </li>
+    <li>
+        Moduł: {{module_no}}     Nazwa : {{file_name}}        Dodany przez: {{user_id}}
+        <a id="downloadButton" class="btn btn-primary" >Download</a>
+    </li>
 </template>

@@ -3,6 +3,7 @@ import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
 import {Roles} from '../imports/collections/roles.js';
+import {YourFileCollection} from '../imports/collections/yourFileCollection.js';
 
 
 
@@ -25,10 +26,6 @@ import '../imports/module-content.html';
 
 import '../imports/teacherPanel.html';
 import '../imports/teacherPanel.js';
-
-//let userId = this.userId;
-
-//Roles.addUsersToRoles( userId, [ 'teacher' ] );
 
 
 
@@ -96,12 +93,15 @@ Template.addFileToModule.events({
 
 
         // Insert a file into the collection
-        MyFiles.insert({
-            file_name: file.name,
-            my_file: file,
-            createdAt: new Date(), // current time
-            user_id: Meteor.userId(),
-            module_no: Session.get("currentModule"),
+        var yourFile = new FS.File(file);
+        YourFileCollection.insert(yourFile, function (err, fileObj) {
+            console.log("callback for the insert, err: ", err);
+            if (!err) {
+                console.log("inserted without error");
+            }
+            else {
+                console.log("there was an error", err);
+            }
         });
     },
 });
@@ -122,4 +122,35 @@ Template.EditorPage.events =  {
 
 Template.registerHelper('isTeacher', () => {
     return Roles.findOne({"user": Meteor.userId()})['role'] === "teacher";
+});
+
+//---------------------fileUpload Again-------------------
+Meteor.subscribe("fileUploads");
+Template.fileList.helpers({
+    theFiles: function () {
+        return YourFileCollection.find();
+    }
+});
+
+Template.fileList.events({
+    'click #deleteFileButton ': function (event) {
+        console.log("deleteFile button ", this);
+        YourFileCollection.remove({_id: this._id});
+    },
+    'change .your-upload-class': function (event, template) {
+        console.log("uploading...")
+        FS.Utility.eachFile(event, function (file) {
+            console.log("each file...");
+            var yourFile = new FS.File(file);
+            YourFileCollection.insert(yourFile, function (err, fileObj) {
+                console.log("callback for the insert, err: ", err);
+                if (!err) {
+                    console.log("inserted without error");
+                }
+                else {
+                    console.log("there was an error", err);
+                }
+            });
+        });
+    }
 });

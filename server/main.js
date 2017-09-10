@@ -4,6 +4,7 @@ import {Documents} from '../imports/collections/documents.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
 import {Roles} from '../imports/collections/roles.js';
+import {YourFileCollection} from '../imports/collections/yourFileCollection.js';
 
 Meteor.startup(function() {
     if (Documents.find().count() === 0) {
@@ -16,7 +17,7 @@ Meteor.startup(function() {
 
 Meteor.publish("fileUploads", function () {
     console.log("publishing fileUploads");
-    return MyFiles.find();
+    return YourFileCollection.find();
 });
 
 
