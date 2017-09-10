@@ -5,7 +5,6 @@ import '../imports/teacherPanel.html'
 import '../client/main.html'
 import '../imports/module-content.html'
 import {Modules} from '../imports/collections/modules.js'
-import {Roles} from '../imports/collections/roles.js'
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -53,20 +52,9 @@ Template.moduleContent.helpers({
     },
     moduleText() {
         var current = Session.get("currentModule");
-        //console.log(Modules.findOne({number: current})['text']);
-        console.log("ROLE:" + Roles.findOne({"user": Meteor.userId()})['role']);
         return Modules.findOne({number: current})['text'];
     },
 });
-
-/*Router.route('/modules/:_id', function () {
-console.log('TEST: params._id = ' + this.params._id);
-this.render('Module', {
-    data: function () {
-        return Modules.findOne({_id: this.params._id});
-    }
-});
-});*/
 
 
 

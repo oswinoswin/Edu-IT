@@ -23,6 +23,9 @@ import '../imports/routing.js'
 
 import '../imports/module-content.html';
 
+import '../imports/teacherPanel.html';
+import '../imports/teacherPanel.js';
+
 //let userId = this.userId;
 
 //Roles.addUsersToRoles( userId, [ 'teacher' ] );

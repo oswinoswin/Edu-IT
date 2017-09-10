@@ -1,3 +1,16 @@
 <template name="teacherPanel">
     <h1>Panel nauczyciela</h1>
+    {{>allFiles}}
+</template>
+
+<template name="allFiles">
+    <ul class="file-list">
+        {{#each currentFiles}}
+            {{> currentFile}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="currentFile">
+    <li>Moduł: {{module_no}} Pliczek : {{file_name}} Dodany przez: {{user_id}} </li>
 </template>
