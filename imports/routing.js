@@ -1,9 +1,11 @@
 import '../imports/pageContent.html'
 import '../imports/views/navbar.html'
 import '../imports/fileUpload.html'
+import '../imports/teacherPanel.html'
 import '../client/main.html'
 import '../imports/module-content.html'
-import {Modules} from '../imports/collections/modules'
+import {Modules} from '../imports/collections/modules.js'
+import {Roles} from '../imports/collections/roles.js'
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -23,6 +25,11 @@ Router.route('/editorPage', function(){
 Router.route('/fileUpload', function(){
     this.layout('ApplicationLayout');
     this.render('fileUpload', {to: 'pageContent'});
+});
+
+Router.route('/teacherPanel', function(){
+    this.layout('ApplicationLayout');
+    this.render('teacherPanel', {to: 'pageContent'});
 });
 
 
@@ -46,7 +53,8 @@ Template.moduleContent.helpers({
     },
     moduleText() {
         var current = Session.get("currentModule");
-        console.log(Modules.findOne({number: current})['text']);
+        //console.log(Modules.findOne({number: current})['text']);
+        console.log("ROLE:" + Roles.findOne({"user": Meteor.userId()})['role']);
         return Modules.findOne({number: current})['text'];
     },
 });
@@ -74,5 +82,8 @@ Template.navBar.events({
     },
     'click #fileUpload': function (){
         Router.go('/fileUpload');
+    },
+    'click #teacherPanel': function (){
+        Router.go('/teacherPanel');
     }
 });

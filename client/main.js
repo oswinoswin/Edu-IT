@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import '../imports/accounts-config.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
+import {Roles} from '../imports/collections/roles.js';
 
 
 
@@ -116,5 +117,6 @@ Template.EditorPage.events =  {
     }
 };
 
-console.log("Current user " + Meteor.userId());
-//Roles.addUsersToRoles( Meteor.userId(), [ 'teacher' ] );
+Template.registerHelper('isTeacher', () => {
+    return Roles.findOne({"user": Meteor.userId()})['role'] === "teacher";
+});

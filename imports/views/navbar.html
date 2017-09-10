@@ -9,10 +9,11 @@
                 <button id="fileUpload" class="btn btn-default navbar-link add-file" href="/fileUpload">AddFile</button>
                 <button class="btn btn-default navbar-link collaborative" href="#">Collaborative</button>
                 <button id="about" class="btn btn-default navbar-link collaborative" href="/about">About</button>
+                {{#if isTeacher}}
+                    <button id="teacherPanel" class="btn btn-default navbar-link collaborative" href="/teacherPanel">Panel Nauczyciela</button>
+                {{/if}}
             </div>
-            {{#if currentUser}}
-                <p>You are logged in. </p>
-            {{/if}}
+
             <div class="navbar-right">{{> loginButtons}}</div>
         </div>
     </nav>

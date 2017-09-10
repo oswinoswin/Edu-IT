@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import {Documents} from '../imports/collections/documents.js';
 import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
+import {Roles} from '../imports/collections/roles.js';
 
 Meteor.startup(function() {
     if (Documents.find().count() === 0) {
@@ -17,3 +18,6 @@ Meteor.publish("fileUploads", function () {
     console.log("publishing fileUploads");
     return MyFiles.find();
 });
+
+
+
