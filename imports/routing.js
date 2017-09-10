@@ -2,6 +2,8 @@ import '../imports/pageContent.html'
 import '../imports/views/navbar.html'
 import '../imports/fileUpload.html'
 import '../client/main.html'
+import '../imports/module-content.html'
+import {Modules} from '../imports/collections/modules'
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -22,6 +24,38 @@ Router.route('/fileUpload', function(){
     this.layout('ApplicationLayout');
     this.render('fileUpload', {to: 'pageContent'});
 });
+
+
+
+Router.route('/modules/:_number', function () {
+    console.log('TEST: params._number = ' + this.params._number);
+    Session.set("currentModule" ,  this.params._number );
+    this.render('moduleContent', {
+        to: 'pageContent',
+    });
+});
+
+Template.moduleContent.helpers({
+    number() {
+        var current = Session.get("currentModule");
+        //console.log("current " + current);
+        return Modules.findOne({number: current})['number'];
+    },
+    moduleText() {
+        var current = Session.get("currentModule");
+        console.log(Modules.findOne({number: current})['text']);
+        return Modules.findOne({number: current})['text'];
+    },
+});
+
+/*Router.route('/modules/:_id', function () {
+console.log('TEST: params._id = ' + this.params._id);
+this.render('Module', {
+    data: function () {
+        return Modules.findOne({_id: this.params._id});
+    }
+});
+});*/
 
 
 
