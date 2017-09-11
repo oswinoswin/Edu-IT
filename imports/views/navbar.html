@@ -5,6 +5,7 @@
                 <a id="logo" class="navbar-brand" href="/">
                     Edu-IT
                 </a>
+                <div class="nav-buttons">
                 <button id="editorPage" type="button" class="btn btn-default editor-page" href="/editorPage">EditorPage</button>
                 <button id="fileUpload" class="btn btn-default navbar-link add-file" href="/fileUpload">AddFile</button>
                 <button class="btn btn-default navbar-link collaborative" href="#">Collaborative</button>
@@ -12,6 +13,7 @@
                 {{#if isTeacher}}
                     <button id="teacherPanel" class="btn btn-default navbar-link collaborative" href="/teacherPanel">Panel Nauczyciela</button>
                 {{/if}}
+                </div>
             </div>
 
             <div class="navbar-right">{{> loginButtons}}</div>

@@ -7,9 +7,43 @@
 body {
     overflow-x: hidden;
 }
+.navbar-brand{
+    color: #fff !important;
+    font: bold 34px 'Chango', cursive;
+    text-shadow: 1px 1px #01bac4, 2px 2px #01bac4, 3px 3px #01bac4;
+}
+
 
 .navbar-header{
+    width: 100%;
+}
+.nav-buttons{
+    position: absolute;
+    right:300px;
+    bottom: 0;
+    height: 100%;
+}
+.navbar-header{
     padding-top: 1.5%;
+}
+.btn{
+    margin-bottom: 0px !important;
+    border-radius: 0px;
+    color: inherit;
+    background-color:#eee;
+    font: 15px 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    height: 100%;
+    border: 0px ;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+.btn:hover, .btn:active, .btn:focus{
+    box-shadow:inset 0 -76px 0 #ffffff;
+    color:#444444;
+    background-color:#01bac4;
+
 }
 
 #login-buttons {
@@ -29,17 +63,25 @@ body {
 
 .a.list-group-item{
     color: #c0c0c0;
+
 }
 
 .list-group-item {
     position: relative;
     display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: black;
-    border: 1px solid #5a5a5a;
+    padding: 10px 30px;
+    background: transparent;
+    border:0;
     list-style-type: none;
     color: #c0c0c0;
+    font-family: 'Raleway', sans-serif !important;
+    text-align: center;
+}
+
+a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
+    box-shadow:inset 4px 0 0 #01bac4;
+    color:#444444 !important;
+    background-color:#fff;
 }
 
 .list-group{
@@ -49,12 +91,14 @@ body {
 
 .my-sidebar{
     height: 100vh;
-    background-color: black;
+    background-color: #474747;
+    box-shadow: 1px 0px 0px 0px #999;
 }
 
+
 .navbar-right{
-    position: relative;
-    margin-right: 200px;
+    position: absolute;
+    right: 200px;
 }
 
 .my-heading{
@@ -68,10 +112,11 @@ body {
 /*override bootstrap class*/
 .navbar{
     margin-bottom: 0px;
-    background-color: #e9ac1b;
+    background-color: #eee;
     min-height: 80px;
     border-radius: 0px;
     border: 0px;
+    box-shadow: 0px -3px 2px 4px #999;
 }
 
 .navbar-default{
