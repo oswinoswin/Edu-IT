@@ -79,5 +79,8 @@ Template.navBar.events({
     },
     'click #teacherPanel': function (){
         Router.go('/teacherPanel');
+    },
+    'click #collaborative': function (){
+        Router.go('/collaborative');
     }
 });
