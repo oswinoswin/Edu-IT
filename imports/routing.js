@@ -2,6 +2,7 @@ import '../imports/pageContent.html'
 import '../imports/views/navbar.html'
 import '../imports/fileUpload.html'
 import '../imports/teacherPanel.html'
+import '../imports/collaborative.html'
 import '../client/main.html'
 import '../imports/module-content.html'
 import {Modules} from '../imports/collections/modules.js'
@@ -29,6 +30,11 @@ Router.route('/fileUpload', function(){
 Router.route('/teacherPanel', function(){
     this.layout('ApplicationLayout');
     this.render('teacherPanel', {to: 'pageContent'});
+});
+
+Router.route('/collaborative', function(){
+    this.layout('ApplicationLayout');
+    this.render('collaborative', {to: 'pageContent'});
 });
 
 

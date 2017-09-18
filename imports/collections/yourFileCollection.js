@@ -1,5 +1,8 @@
 export const YourFileCollection = new FS.Collection("yourFileCollection", {
-    stores: [new FS.Store.FileSystem("yourFileCollection", {path: "~/meteor_uploads"})]
+    stores: [
+        new FS.Store.GridFS("yourFileCollection",
+            {path: "~/meteor_uploads"})
+    ]
 });
 YourFileCollection.allow({
     insert: function (userId, doc) {
