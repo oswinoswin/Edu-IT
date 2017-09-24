@@ -5,6 +5,7 @@ import {MyFiles} from '../imports/collections/myFiles.js';
 import {Modules} from '../imports/collections/modules.js';
 import {Roles} from '../imports/collections/roles.js';
 import {YourFileCollection} from '../imports/collections/yourFileCollection.js';
+import {EditorFiles} from '../imports/collections/editor-files';
 
 Meteor.startup(function() {
     if (Documents.find().count() === 0) {
@@ -16,9 +17,14 @@ Meteor.startup(function() {
 });
 
 Meteor.publish("fileUploads", function () {
-    console.log("publishing fileUploads");
+    //console.log("publishing fileUploads");
     return YourFileCollection.find();
 });
 
+
+Meteor.publish("editorFiles", function () {
+    //console.log("publishing fileUploads");
+    return EditorFiles.find();
+});
 
 

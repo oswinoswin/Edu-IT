@@ -142,3 +142,17 @@ a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
     list-style-type: none;
 }
 
+
+.doc .doc__background-ribbon {
+    height: 200px;
+    background: #3F51B5;
+}
+
+.doc .doc__text-editor {
+    width: 60%;
+    padding: 40px 28px;
+    min-height: 300px;
+    background: #fff;
+    margin: 0 auto;
+    transform: translateY(-150px);
+}

@@ -6,6 +6,10 @@ import '../imports/collaborative.html'
 import '../client/main.html'
 import '../imports/module-content.html'
 import {Modules} from '../imports/collections/modules.js'
+import {EditorFiles} from '../imports/collections/editor-files'
+import '../imports/editor.html';
+import '../imports/editor';
+import '../client/main.css'
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -52,16 +56,39 @@ Router.route('/modules/:_number', function () {
 
 Template.moduleContent.helpers({
     number() {
-        var current = Session.get("currentModule");
+       let current = Session.get("currentModule");
         //console.log("current " + current);
         return Modules.findOne({number: current})['number'];
     },
     moduleText() {
-        var current = Session.get("currentModule");
+        let current = Session.get("currentModule");
         return Modules.findOne({number: current})['text'];
     },
 });
 
+
+Router.route('/editor/:_number', function () {
+        console.log(' EDITOR TEST: params._number = ' + this.params._number);
+        Session.set("currentEditor" ,  this.params._number );
+        this.render('editor', {
+            to: 'pageContent',
+        });
+    },{
+        name: 'editor.show'
+    }
+);
+
+Template.editor.helpers({
+    number() {
+        let currentE = Session.get("currentEditor");
+        console.log("currentE " + currentE);
+        return Modules.findOne({number: currentE})['number'];
+    },
+    editorText() {
+        let currentE = Session.get("currentEditor");
+        return EditorFiles.findOne({number: currentE})['text'];
+    },
+});
 
 
 Template.navBar.events({
