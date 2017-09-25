@@ -7,11 +7,13 @@ import {EditorFiles} from "./collections/editor-files"
 
 //setup before functions
 var typingTimer;                //timer identifier
-var doneTypingInterval = 3000;  //time in ms (5 seconds)
+var doneTypingInterval = 5000;  //time in ms (5 seconds)
 
 //user is "finished typing," do something
-function doneTyping () {
+function doneTyping (target) {
+    //save changes to database
     console.log("-----------------DONE TYPING!");
+
 }
 
 Template.editor.onRendered(function(){
@@ -31,7 +33,7 @@ Template.editor.events({
 
         clearTimeout(typingTimer);
         if (target) {
-            typingTimer = setTimeout(doneTyping, doneTypingInterval);
+            typingTimer = setTimeout(doneTyping(target), doneTypingInterval);
         }
     },
     'onclick div' : function (event) {
