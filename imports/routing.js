@@ -5,11 +5,10 @@ import '../imports/teacherPanel.html'
 import '../imports/collaborative.html'
 import '../client/main.html'
 import '../imports/module-content.html'
-import {Modules} from '../imports/collections/modules.js'
-import {EditorFiles} from '../imports/collections/editor-files'
 import '../imports/editor.html';
 import '../imports/editor';
 import '../client/main.css'
+import { Session } from 'meteor/session'
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -54,17 +53,6 @@ Router.route('/modules/:_number', function () {
     }
 );
 
-Template.moduleContent.helpers({
-    number() {
-       let current = Session.get("currentModule");
-        //console.log("current " + current);
-        return Modules.findOne({number: current})['number'];
-    },
-    moduleText() {
-        let current = Session.get("currentModule");
-        return Modules.findOne({number: current})['text'];
-    },
-});
 
 
 Router.route('/editor/:_number', function () {
@@ -78,17 +66,7 @@ Router.route('/editor/:_number', function () {
     }
 );
 
-Template.editor.helpers({
-    number() {
-        let currentE = Session.get("currentEditor");
-        console.log("currentE " + currentE);
-        return Modules.findOne({number: currentE})['number'];
-    },
-    editorText() {
-        let currentE = Session.get("currentEditor");
-        return EditorFiles.findOne({number: currentE})['text'];
-    },
-});
+
 
 
 Template.navBar.events({
