@@ -13,6 +13,10 @@ var doneTypingInterval = 5000;  //time in ms (5 seconds)
 function doneTyping (target) {
     //save changes to database
     console.log("-----------------DONE TYPING!");
+    console.log("typed: " + target + " LOL");
+    let currentE = Session.get("currentEditor");
+    let id = EditorFiles.findOne({number:currentE})["_id"];
+    EditorFiles.update({_id: id},{"number": currentE, "text":target});
 
 }
 
