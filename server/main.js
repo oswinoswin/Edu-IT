@@ -23,8 +23,7 @@ Meteor.publish("fileUploads", function () {
 
 
 Meteor.publish("editorFiles", function () {
-    //console.log("publishing fileUploads");
+    console.log("publishing editorFiles");
     return EditorFiles.find();
 });
-
 
