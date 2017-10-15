@@ -5,6 +5,7 @@ import { Session } from 'meteor/session'
 import {EditorFiles} from "./collections/editor-files"
 
 
+
 //setup before functions
 var typingTimer;                //timer identifier
 var doneTypingInterval = 5000;  //time in ms (5 seconds)
@@ -12,7 +13,10 @@ var doneTypingInterval = 5000;  //time in ms (5 seconds)
 //user is "finished typing," do something
 function doneTyping (target) {
     //save changes to database
-    console.log("-----------------DONE TYPING!");
+    console.log("-----------------DONE TYPING! " + target);
+    let currentE = Session.get("currentEditor");
+    let id = EditorFiles.findOne({number:currentE})['_id'];
+    EditorFiles.update({_id:id},{number:currentE, text:target});
 
 }
 
@@ -33,7 +37,7 @@ Template.editor.events({
 
         clearTimeout(typingTimer);
         if (target) {
-            typingTimer = setTimeout(doneTyping(target), doneTypingInterval);
+            typingTimer = setTimeout(doneTyping, doneTypingInterval, target);
         }
     },
     'onclick div' : function (event) {
@@ -51,5 +55,24 @@ Template.editor.helpers({
     editorText() {
         let currentE = Session.get("currentEditor");
         return EditorFiles.findOne({number: currentE})['text'];
+    },
+});
+
+
+Meteor.methods({
+    'tasks.insert'(EditorText) {
+        //check(text, String);
+
+        // Make sure the user is logged in before inserting a task
+       /* if (! this.userId) {
+            throw new Meteor.Error('not-authorized');
+        }*/
+
+        EditorFiles.insert({
+            EditorText,
+            createdAt: new Date(),
+            owner: this.userId,
+            username: Meteor.users.findOne(this.userId).username,
+        });
     },
 });
