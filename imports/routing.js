@@ -9,6 +9,7 @@ import '../imports/editor.html';
 import '../imports/editor';
 import '../client/main.css'
 import { Session } from 'meteor/session'
+import {EditorFiles} from "./collections/editor-files"
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -58,6 +59,8 @@ Router.route('/modules/:_number', function () {
 Router.route('/editor/:_number', function () {
         console.log(' EDITOR TEST: params._number = ' + this.params._number);
         Session.set("currentEditor" ,  this.params._number );
+        let editorText = EditorFiles.findOne({number:this.params._number})['text'];
+        Session.set("currentText", editorText);
         this.render('editor', {
             to: 'pageContent',
         });
