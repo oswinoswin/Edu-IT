@@ -20,30 +20,28 @@ function doneTyping (target) {
 }
 
 Template.editor.onRendered(function(){
-    var textPlace = this.find('#text-place');
-    textPlace.contentEditable=true;
-    textPlace.focus();
+    let code = t.find("#code-mirror").value;
+    console.log(code);
     }
 );
 
 
 Template.editor.events({
-    'keyup' : function (event) {
+    'keyup' : function (event,t) {
         event.preventDefault();
-        // Get value from form element
-        const target = $(event.currentTarget).text();
-        console.log(target);
 
+        let target = t.find("#code-mirror").value;
         clearTimeout(typingTimer);
         if (target) {
             typingTimer = setTimeout(doneTyping, doneTypingInterval, target);
         }
+
     },
     'onclick div' : function (event) {
         console.log('click');
         console.log(Session.get('currentEditor'));
     }
-})
+});
 
 Template.editor.helpers({
     number() {
@@ -51,10 +49,21 @@ Template.editor.helpers({
         console.log("currentE " + currentE);
         return EditorFiles.findOne({number: currentE})['number'];
     },
-    editorText() {
+    "editorOptions": function() {
+        return {
+            lineNumbers: true,
+            mode: "python"
+        }
+    },
+
+    "reactiveVar": function() {
+        return Session;
+    },
+
+    editorCode() {
         let currentE = Session.get("currentEditor");
         return EditorFiles.findOne({number: currentE})['text'];
-    },
+    }
 });
 
 
