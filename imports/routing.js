@@ -82,7 +82,8 @@ Template.editor.helpers({
     number() {
         let currentE = Session.get("currentEditor");
         console.log("currentE " + currentE);
-        return Modules.findOne({number: currentE})['number'];
+        return EditorFiles.findOne({number: currentE})['number'];
+
     },
     editorText() {
         let currentE = Session.get("currentEditor");
