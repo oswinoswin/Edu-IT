@@ -27,3 +27,7 @@ Meteor.publish("editorFiles", function () {
     return EditorFiles.find();
 });
 
+Meteor.publish("editorFiles", function () {
+    console.log("publishing editorFiles");
+    return EditorFiles.find();
+});
