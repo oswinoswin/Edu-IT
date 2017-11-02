@@ -154,3 +154,19 @@ Template.fileList.events({
         });
     }
 });
+
+
+
+Template.moduleContent.helpers({
+    number() {
+        let current = Session.get("currentModule");
+        console.log("current " + current);
+        return Modules.findOne({number: current})['number'];
+    },
+    moduleText() {
+        let current = Session.get("currentModule");
+        let toDisp = Modules.findOne({number: current})['text'];
+        console.log("Should be displayed: " + toDisp);
+        return toDisp;
+    },
+});

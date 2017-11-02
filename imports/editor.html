@@ -3,8 +3,7 @@
         <h1 class="header__h1">Online editor 3.0</h1>
     </header>
     <div class="doc">
-        <div class="doc__background-ribbon"></div>
-        <div id="text-place" class="doc__text-editor" >{{editorText}}</div>
+         {{> CodeMirror id="code-mirror" name="someName" options=editorOptions code=editorCode}}
     </div>
 </template>
 

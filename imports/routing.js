@@ -10,6 +10,8 @@ import {EditorFiles} from '../imports/collections/editor-files'
 import '../imports/editor.html';
 import '../imports/editor';
 import '../client/main.css'
+import { Session } from 'meteor/session'
+
 
 Router.route('/', function(){
     this.layout('ApplicationLayout');
@@ -82,8 +84,7 @@ Template.editor.helpers({
     number() {
         let currentE = Session.get("currentEditor");
         console.log("currentE " + currentE);
-        return EditorFiles.findOne({number: currentE})['number'];
-
+        return Modules.findOne({number: currentE})['number'];
     },
     editorText() {
         let currentE = Session.get("currentEditor");

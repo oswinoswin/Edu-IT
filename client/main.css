@@ -6,6 +6,7 @@
 
 body {
     overflow-x: hidden;
+    font-family: 'Open Sans', Helvetica, sans-serif;
 }
 .navbar-brand{
     color: #fff !important;
