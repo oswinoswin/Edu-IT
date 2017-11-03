@@ -1,24 +1,43 @@
-/*!
- * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
 body {
     overflow-x: hidden;
     font-family: 'Open Sans', Helvetica, sans-serif;
+    height: 100%;
+
+}
+html {
+    height: 100%;
+}
+.box {
+
+    height: 100%;
+    background-color: #2980b9;
+    position: relative;
 }
 
-/*
-.navbar-brand{
-    color: #fff !important;
-    font: bold 34px 'Chango', cursive;
-    text-shadow: 1px 1px #01bac4, 2px 2px #01bac4, 3px 3px #01bac4;
-}*/
+.row{
+    height: 100%;
+    margin-bottom: 0;
+    top: 20px
 
+}
+.list-group{
+    margin-bottom: 0px;
+}
+.row > [class*='col-'] {
+    height: 100%;
+    min-height: 100%;
+    padding-bottom: 0px;
+}
+.my-sidebar{
+    height: 100%;
+}
 
+.login-buttons-with-only-one-button{
+    color:#f00;
+}
 .navbar-header{
     width: 100%;
+    padding-top: 1.5%;
 }
 .nav-buttons{
     position: absolute;
@@ -26,31 +45,6 @@ body {
     bottom: 0;
     height: 100%;
 }
-.navbar-header{
-    padding-top: 1.5%;
-}
-
-/*
-.btn{
-    margin-bottom: 0px !important;
-    border-radius: 0px;
-    color: inherit;
-    background-color:#eee;
-    font: 15px 'Raleway', sans-serif;
-    letter-spacing: 2px;
-    height: 100%;
-    border: 0px ;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.5s ease-out;
-}
-.btn:hover, .btn:active, .btn:focus{
-    box-shadow:inset 0 -76px 0 #ffffff;
-    color:#444444;
-    background-color:#01bac4;
-
-}*/
-
 
 .list-group-item:first-child {
     border-top-left-radius: 0px;
@@ -61,35 +55,11 @@ body {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-/*
-.a.list-group-item{
-    color: #c0c0c0;
-
-}*/
-/*
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 30px;
-    background: transparent;
-    border:0;
-    list-style-type: none;
-    color: #c0c0c0;
-    font-family: 'Raleway', sans-serif !important;
-    text-align: center;
-}*/
-
-
-/*
-a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
-    box-shadow:inset 4px 0 0 #01bac4;
-    color:#444444 !important;
-    background-color:#fff;
-}*/
 
 .list-group{
     padding-right: 0px;
     padding-left: 0px;
+    height: inherit;
 }
 
 .my-sidebar{
@@ -122,4 +92,59 @@ a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
 
 
 
+/*
+.a.list-group-item{
+    color: #c0c0c0;
 
+}*/
+/*
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 30px;
+    background: transparent;
+    border:0;
+    list-style-type: none;
+    color: #c0c0c0;
+    font-family: 'Raleway', sans-serif !important;
+    text-align: center;
+}*/
+
+
+/*
+a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
+    box-shadow:inset 4px 0 0 #01bac4;
+    color:#444444 !important;
+    background-color:#fff;
+}*/
+
+
+
+
+/*
+.btn{
+    margin-bottom: 0px !important;
+    border-radius: 0px;
+    color: inherit;
+    background-color:#eee;
+    font: 15px 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    height: 100%;
+    border: 0px ;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+.btn:hover, .btn:active, .btn:focus{
+    box-shadow:inset 0 -76px 0 #ffffff;
+    color:#444444;
+    background-color:#01bac4;
+
+}*/
+
+/*
+.navbar-brand{
+    color: #fff !important;
+    font: bold 34px 'Chango', cursive;
+    text-shadow: 1px 1px #01bac4, 2px 2px #01bac4, 3px 3px #01bac4;
+}*/
