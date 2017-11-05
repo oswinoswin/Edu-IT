@@ -10,41 +10,43 @@ html {
 .box {
 
     height: 100%;
-    background-color: #2980b9;
+    background-color: #efeeff;
     position: relative;
 }
 
+.content{
+    background-color: white;
+    text-align: center;
+}
+#moduleContent{
+    text-align: center;
+}
 .row{
     height: 100%;
     margin-bottom: 0;
     top: 20px
 
 }
-.list-group{
-    margin-bottom: 0px;
+.list-group-item{
+
+    background-color: #f5f5ff;
 }
 .row > [class*='col-'] {
     height: 100%;
     min-height: 100%;
     padding-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .my-sidebar{
     height: 100%;
+
 }
 
-.login-buttons-with-only-one-button{
-    color:#f00;
-}
-.navbar-header{
-    width: 100%;
-    padding-top: 1.5%;
-}
-.nav-buttons{
-    position: absolute;
-    right:300px;
-    bottom: 0;
-    height: 100%;
-}
+
+
 
 .list-group-item:first-child {
     border-top-left-radius: 0px;
@@ -62,35 +64,36 @@ html {
     height: inherit;
 }
 
-.my-sidebar{
-    background-color: #000;
-    margin-left: -15px;
-}
-
-
-.navbar-right{
-    position: absolute;
-    right: 200px;
-}
-
-
-
-/*override bootstrap class*/
 .navbar{
     margin-bottom: 0px;
-    background-color: #eee;
+    background-color: #6f7081;
     min-height: 80px;
     border-radius: 0px;
-    border: 0px;
- /*   box-shadow: 0px -3px 2px 4px #999;*/
+    border: 1px;
+    box-shadow: 0px -3px 2px 4px #999;
+    color: white;
 }
+
+.navbar-header{
+    width: 100%;
+
+}
+.navbar-right{
+    position: absolute;
+    right: 1.5%;
+}
+
+
 
 .navbar-default{
     color: black;
 }
 
 
-
+.navbar-brand{
+    color: #fff !important;
+    font: bold 34px 'Open Sans', cursive;
+}
 
 /*
 .a.list-group-item{
@@ -143,8 +146,4 @@ a.menu-item.list-group-item:hover, a.menu-item.list-group-item:focus{
 }*/
 
 /*
-.navbar-brand{
-    color: #fff !important;
-    font: bold 34px 'Chango', cursive;
-    text-shadow: 1px 1px #01bac4, 2px 2px #01bac4, 3px 3px #01bac4;
-}*/
+*/
