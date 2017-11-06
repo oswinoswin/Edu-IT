@@ -43,7 +43,15 @@ Router.route('/collaborative', function(){
     this.render('collaborative', {to: 'pageContent'});
 });
 
-
+Router.route('/module:_number', function () {
+        console.log('Yolo: params._number = ' + this.params._number);
+        Session.set("currentModule" ,  this.params._number );
+        let template_name = 'module' + this.params._number;
+        this.render(template_name, {
+            to: 'pageContent',
+        });
+    }
+);
 
 Router.route('/modules/:_number', function () {
     console.log('TEST: params._number = ' + this.params._number);

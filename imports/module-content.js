@@ -1,8 +1,10 @@
 import {Modules} from '../imports/collections/modules.js';
 import '../imports/module-content.html';
 import { Template } from 'meteor/templating';
-import '../client/air.css';
+
 import { Session } from 'meteor/session'
+
+import '../client/air.css'
 
 
 Template.moduleContent.helpers({
