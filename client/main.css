@@ -9,7 +9,6 @@ html {
 }
 .box {
 
-    height: 100%;
     background-color: #efeeff;
     position: relative;
 }
@@ -17,6 +16,11 @@ html {
 .content{
     background-color: white;
     text-align: center;
+
+}
+.text-container{
+    margin: 10%;
+    margin-top: inherit;
 }
 #moduleContent{
     text-align: center;
