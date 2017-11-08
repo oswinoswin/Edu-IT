@@ -5,6 +5,7 @@ import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session'
 
 import '../client/air.css'
+import '../imports/modules/module1.html'
 
 
 Template.moduleContent.helpers({

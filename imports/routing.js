@@ -11,6 +11,16 @@ import '../imports/editor.html';
 import '../imports/editor';
 import '../client/main.css'
 import { Session } from 'meteor/session'
+import '../imports/modules/module1.html'
+import '../imports/modules/module2.html'
+import '../imports/modules/module3.html'
+import '../imports/modules/module4.html'
+import '../imports/modules/module5.html'
+import '../imports/modules/module6.html'
+import '../imports/modules/module7.html'
+import '../imports/modules/module8.html'
+import '../imports/modules/module9.html'
+
 
 
 Router.route('/', function(){
