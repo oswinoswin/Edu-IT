@@ -2,30 +2,78 @@
 <template name="module2">
     <h2>Moduł 2. Podstawowe typy danych</h2>
 
-    <h4>Liczby</h4>
-    <p>W poprzedniej lekcji </p>
-    <pre><code class="language-python">>>> 2 + 2
-4
->>> 50 - 5*6
-20
->>> (50 - 5*6) / 4
-5.0
->>> 8 / 5  #to jest komentarz
-1.6
-    </code></pre>
-    <p>
 
-    </p>
+    <h4>Liczby</h4>
+    <p>W poprzedniej lekcji poznaliśmy pierwsze operacje na liczbach.
+        Oprócz nich dostępne są również:</p>
+    <pre><code class="language-python">>>> 2 + 2
+>>> 17 // 3  # zwraca część całkowitą z dzielenia
+5
+>>> 17 % 3  # zwraca resztę z dzielenia
+2
+>>> 5 * 3 + 2  # rezultat*dzielnik + reszta
+17
+
+>>> 5 ** 2  # operator ** służy do potęgowania
+25
+>>> 2 ** 7
+128
+    </code></pre>
+    <p> Operator <b>=</b> służy do przypisania wartości do zmiennej:</p>
+    <pre><code class="language-python">
+>>> tax = 12.5 / 100
+>>> tax
+0.125</code></pre>
+
+    <p>W trybie interaktywnym ostatnia wypisana wartość
+        jest przypisana do zmiennej: <b>_</b></p>
+    <pre><code class="language-python">
+>>> price = 100
+>>> 2 * tax
+0.25
+>>> price + _
+100.25</code></pre>
+
 
     <h4>Tekst</h4>
-    <p>
-
-    </p>
+    <p>Python pozwala na operacje na tekstach (stringach). Żeby zdefiniować zmienną
+        typu string można użyć <b>" "</b> lub <b>' '</b>. Do umieszczenia " i ' wewnątrz tekstu
+        można użyć \.</p>
+    <pre><code class="language-python">
+>>> 'jakiś tekst'  # pojedyńczy cudzysłów
+'jakiś tekst'
+>>> 'doesn\'t'  #  \' żeby zapisać cudzysłów w tekście
+'doesn't'
+>>> "doesn't"  # ...można też użyć ' wewnątrz " "
+"doesn't"
+>>> '"Yes," he said.'
+'"Yes," he said.'
+>>> "\"Yes,\" he said."
+'"Yes," he said.'
+>>> '"Isn\'t," she said.'
+'"Isn\'t," she said.'
+    </code>
+    </pre>
+    <p>Znak nowej linii: <b>\n</b></p>
+    <pre><code class="language-python">
+>>> print('C:\some\name')  # tutaj \n oznacza nową linię
+C:\some
+ame
+>>> print(r'C:\some\name')  # r - raw string, \n nie jest interpretowany jako nowa linia
+        C:\some\name</code></pre>
+    <p>Łączenie tekstów:</p>
+    <pre><code class="language-python">
+ >>> 'Py' 'thon'
+'Python'
+    </code></pre>
+    <p>Przydatne w przypadku długich łańcuchów znaków: </p>
+    <pre><code class="language-python">>>> text = ('Tutaj jest długi tekst, który chcemy połączyć '
+...         'z takstem który znajduje się trochę niżej.')
+>>> text
+'Tutaj jest długi tekst, który chcemy połączyć z takstem który znajduje się trochę niżej.'</code></pre>
 
     <h4>Prawda/fałsz</h4>
-    <p>
-
-    </p>
+    <p><b>Boolean</b> -typ służący do przechowywania wartości prawda/fałsz.</p>
 
     <h4>Konwersje typów</h4>
     <p></p>
@@ -40,10 +88,7 @@
 
     </p>
 
-    <h4>Typowanie w Pythonie</h4>
-    <p>
-
-    </p>
+<pre><code class="language-python"></code></pre>
 
 
 </template>
