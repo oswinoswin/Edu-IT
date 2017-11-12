@@ -20,6 +20,10 @@ import '../imports/modules/module6.html'
 import '../imports/modules/module7.html'
 import '../imports/modules/module8.html'
 import '../imports/modules/module9.html'
+import '../imports/modules/module10.html'
+import '../imports/modules/module11.html'
+import '../imports/modules/module12.html'
+
 
 
 

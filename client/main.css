@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
     font-family: 'Open Sans', Helvetica, sans-serif;
     height: 100%;
+    background-color: #efeeff;
 
 }
 html {
@@ -9,7 +10,7 @@ html {
 }
 .box {
 
-    background-color: #efeeff;
+
     position: relative;
 }
 
