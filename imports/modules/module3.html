@@ -2,19 +2,71 @@
 <template name="module3">
     <h2>Moduł 3. Zmienne i operatory.</h2>
 
-    <h4>Zmienne. Jak nie nazywać zmiennych></h4>
+    <h4>Dobre praktyki:</h4>
     <p>
+        <ul>
+            <li><a href="https://www.python.org/dev/peps/pep-0008/">www.python.org/dev/peps/pep-0008</a> </li>
+            <li>Używanie 4 spacji zamiast tabulatorów to robienia wcięć.</li>
+            <li>Długość lini nie powinna przekraczać 79 znaków.</li>
+            <li>Spacje po obu stronach operatorów binarnych (==, &lt;, &gt; !=, &lt;=, &gt;=, not, is, is not)</li>
+            <li>Spójność z resztą modułu i resztą projektu jest ważniejsza od stosowania się do wytycznych z PEP</li>
 
+
+        </ul>
     </p>
 
-    <h4> Operatry</h4>
-    <p></p>
+    <h4>Operacje powównywania: </h4>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Znaczenie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> &lt; </td>
+            <td> mniejszy </td>
+        </tr>
+        <tr>
+            <td> &lt;= </td>
+            <td> mniejszy bądź równy</td>
+        </tr>
+        <tr>
+            <td> &gt; </td>
+            <td> większy </td>
+        </tr>
+        <tr>
+            <td> &gt;= </td>
+            <td> większy bądź równy</td>
+        </tr>
+        <tr>
+            <td> == </td>
+            <td> równy</td>
+        </tr>
+        <tr>
+            <td> != </td>
+            <td> nie równy</td>
+        </tr>
+        <tr>
+            <td> is not </td>
+            <td> identyczność </td>
+        </tr>
+        <tr>
+            <td> &lt;= </td>
+            <td> brak identyczności </td>
+        </tr>
 
+        </tbody>
+    </table>
 
+    <p>Różnica między <b>is </b> i <b>=</b>:</p>
+    <pre><code class="language-python"></code>>>> False == 0
+True
+>>> False is 0
+False
+>>>
+</pre>
 
-
-
-    <h5>Some example code:</h5>
-    <pre><code class="language-python">print("Hello World")</code></pre>
 
 </template>

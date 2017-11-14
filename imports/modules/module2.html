@@ -92,12 +92,41 @@ True
 False
     </code></pre>
 
-    <h4>Wyrażenia logiczne "if</h4>
-    <p>
+    <h4>Wyrażenia logiczne <b>if</b></h4>
 
-    </p>
+<pre><code class="language-python">
+>>> number = -2
+>>> if number &lt; 0:
+...     print("This is a negative number")
+...
+This is a negative number
+</code></pre>
+    <h4>Operacje logiczne:</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Operacja</th>
+                <th>Rezultat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> x or y </td>
+                <td> Prawda, jeśli przynajmniej jedna wartość jest prawdziwa </td>
+            </tr>
+            <tr>
+                <td> x and y </td>
+                <td> Prawda, jeśli obie wartości są prawdziwe</td>
+            </tr>
+            <tr>
+                <td>not x</td>
+                <td>Prawda, jeśli x jest prawdziwe, w przeciwnym wypadku fałsz </td>
+            </tr>
+        </tbody>
+    </table>
+    <p> Operacja <b>not 1</b> ma niższy priorytet niż pozostałe operacje. Dlatego <b> not a == b</b> jest równoważne <b>not ( a == b) </b>,
+        a <b>a == not b</b> jest błędem składniowym.</p>
 
-<pre><code class="language-python"></code></pre>
 
 
 </template>
