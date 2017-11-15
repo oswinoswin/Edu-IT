@@ -1,11 +1,38 @@
 
 <template name="module8">
     <h2>Moduł 8. Data i czas.</h2>
+    <p>Moduł <b>datetime</b> dostarcza funkcji pozwalających na operacje związane z czasem</p>
 
     <h4>Podstawowe typy:</h4>
-    <h5>date</h5>
-    <h5>time</h5>
-    <h5>datetime</h5>
-    <h5>fimedelta</h5>
+    <ul>
+        <li>date</li>
+        <li>time</li>
+        <li>datetime</li>
+        <li>timedelta</li>
+    </ul>
+
+    <h4>Przykłady:</h4>
+    <pre><code class="language-python">>>> import datetime
+>>> print "Current date and time: " , datetime.datetime.now()
+Current date and time:  2017-11-15 23:35:56.257383
+</code> </pre>
+
+    <pre><code class="language-python">>>> import datetime
+>>> print "Current date and time: " , datetime.datetime.now()
+Current date and time:  2017-11-15 23:35:56.257383
+</code> </pre>
+
+    <pre><code class="language-python">>>> import datetime
+>>> christmas = datetime.date(datetime.datetime.now().year, 12, 25)
+>>> christmas
+datetime.date(2017, 12, 25)
+>>>days = christmas - datetime.datetime.now().date()
+>>> days
+datetime.timedelta(40)
+>>> days.days
+40
+</code> </pre>
+
+
 
 </template>

@@ -3,30 +3,99 @@
     <h2>Moduł 6. Funkcje.</h2>
 
     <h4>Funkcje wbudowane </h4>
+    <p>Lista często używanych funkcji</p>
 
-    <h5>Sortowanie</h5>
-    <pre><code class="language-python">
-    </code></pre>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Funkcja</th>
+            <th>Działanie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> abs() </td>
+            <td> wartość bezwzględna </td>
+        </tr>
+        <tr>
+            <td> enumerate() </td>
+            <td> numeruje elementy w obiekcie (obiekt musi pozwalać na iterowanie po nim)</td>
+        </tr>
 
-    <h5>Formatowanie tekstu:</h5>
-    <pre><code class="language-python">
+        <tr>
+            <td> format()</td>
+            <td> Zamienia obiekt (najczęściej string) na oreśloną postać</td>
+        </tr>
+        <tr>
+            <td> int()</td>
+            <td> Zamienia obiekt na int</td>
+        </tr>
 
-    </code></pre>
+        <tr>
+            <td> max() </td>
+            <td> maksimum</td>
+        </tr>
+        <tr>
+            <td> min() </td>
+            <td> minimum </td>
+        </tr>
+        <tr>
+            <td> range() </td>
+            <td>zwraca zakres wartości </td>
+        </tr>
+        <tr>
+            <td> sorted() </td>
+            <td>sortowanie obiektu </td>
+        </tr>
+        <tr>
+            <td> str() </td>
+            <td> zmienia obiekt na string </td>
+        </tr>
+         </tbody>
+    </table>
+
+
+    <h4>Przykłady: </h4>
+    <h5>Formatowanie tekstu i print:</h5>
+    <pre><code class="language-python">>>> print("ile? " + 5)
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+TypeError: Can't convert 'int object to str implicitly
+>>> print("ile?  {}".format(5))
+ile?  5
+>>> </code></pre>
 
     <h5>abs</h5>
-    <pre><code class="language-python">
-        abs(-1)
-    </code></pre>
+    <pre><code class="language-python">>>> abs(-1)
+1
+</code></pre>
 
-    <h5>print</h5>
-    <pre><code class="language-python">
-        print("hej")
-    </code></pre>
+    <h5>range</h5><pre><code class="language-python">>>> for i in range(1,5):
+...     print(i)
+...
+1
+2
+3
+4</code> </pre>
 
    <h4>Definiowanie funkcji</h4>
-    <pre><code class="language-python">def count_sheep(sheep):
-        return len(sheep)
+    <p>Python pozwala na tworzenie własnych funkcji <i>(user-defined finctions)</i>.</p>
+    <pre><code class="language-python">def nazwa(parametry):
+        instrukcje
+        return wyrazenie #można pominąć, jeśli funkcja nie musi niczego zwracać
     </code></pre>
+    <h5>Przykład</h5>
+    <pre><code class="language-python">>>> def print_whatever():
+...     print("whatever")
+...
+>>> print_whatever()
+whatever</code> </pre>
+    <h5>I jeszcze jeden:</h5>
+    <pre><code class="language-python">>>> def count_sheep(sheep):
+...     return len(sheep)
+...
+>>> count_sheep(['one', 'two','three'])
+3 </code> </pre>
 
 
 </template>
