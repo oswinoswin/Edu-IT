@@ -18,25 +18,79 @@
 >>> lista[-1]
 'ostatni'
 </code> </pre>
+
+
     <p>Długość listy:</p>
     <pre><code class="language-python">>>> len(lista)
 4
 </code></pre>
-    <p>Łączenie list: </p>
-    <pre><code class="language-python">print("Hello World")</code></pre>
-    <p>Zmiana wartości elementu: </p>
-    <pre><code class="language-python">print("Hello World")</code></pre>
-
-
-
     <h4> Notacja "slice"</h4>
-    <h4>Operacje na listach </h4>
-    <p> </p>
+    <p>Pozwala na wybranie kilku kolejnych elementów z listy.</p>
+    <pre><code class="language-python">>>> lista = ['pierwszy', 'drugi', 'trzeci', 'ostatni']
+>>> lista[:2] #zwraca nową listę złożoną z dwóch pierwszych elementów
+['pierwszy', 'drugi']
+>>> lista[-2:]
+['trzeci', 'ostatni']
+</code></pre>
+
+    <p>Notacje 'slice' ma zastosowanie równierz w przypadku operacji na tekście:</p>
+    <pre><code class="language-python">>>>tekst = 'Python jest niezmiernie fascynujący'
+>>> tekst[2:10]
+'thon jes'</code></pre>
+
+    <p>Łączenie list: </p>
+    <pre><code class="language-python">>> nowa_lista = [1, 2, 3]
+>>> suma_list = lista + nowa_lista
+>>> suma_list
+['pierwszy', 'drugi', 'trzeci', 'ostatni', 1, 2, 3]
+
+</code></pre>
+    <p>Zmiana wartości elementu: </p>
+    <pre><code class="language-python">>>> suma_list
+['pierwszy', 'drugi', 'trzeci', 'jednak_nie_ostatni', 1, 2, 3]
+</code></pre>
+
+    <h4>Krotki (Tuples)</h4>
+    <p>Krotka to kilka elementów oddzielonych przecinkiem.</p>
+
+    <pre><code class="language-python">>>> t = 'a', 'b', 'c'
+>>> t
+('a', 'b', 'c')
+>>> t[0]  #można korzystać z indeksów
+'a'
+>>> t[1] = 'd' #ale przypisać nowej wartości się nie da
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+TypeError: 'tuple' object does not support item assignment
+>>> big_tuple = t,('d','e') #można zagnieżdżać tuple
+>>> big_tuple
+(('a', 'b', 'c'), ('d', 'e'))
+</code></pre>
+
     <h4>Słowniki</h4>
-    <p>    </p>
+    <p>Są trochę podobne do list. Główna różnica polega na tym, że do poszczególnych elementów
+    odwołujemy się przez klucze, a nie przez indeksy</p>
+    <pre><code class="language-python">>>> telefony = { 'Ala' : '111-222-333', 'Robert' : '999-888-777', 'Gargamel' : '777' }
+>>> telefony['Ala']
+'111-222-333'
+>>> telefony['Ala'] = '876-432-109'
+>>> telefony['Ala']
+'876-432-109'
+    </code></pre>
+    <p>Sprawdzenie, czy mamy telefon do Roberta</p>
+    <pre><code class="language-python">>>> 'Robert' in telefony
+True
+>>> del telefony['Gargamel']
+>>> telefony
+{'Ala': '876-432-109', 'Robert': '999-888-777'}
+    </code> </pre>
+    <p>Inny sposób tworzenia słownika:</p>
+    <pre><code class="language-python">
+>>> telefony2 = dict([('Ala', '876-432-109') , ('Robert','999-888-777') ])
+>>> telefony2
+{'Ala': '876-432-109', 'Robert': '999-888-777'}
+    </code> </pre>
 
-    <h4>Krotki</h4>
 
-    <pre><code class="language-python">print("Hello World")</code></pre>
 
 </template>
