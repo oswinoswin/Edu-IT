@@ -1,16 +1,113 @@
 
 <template name="module9">
     <h2>Moduł 9. Wyrażenia regularne.</h2>
-    <h4>Ogólnie o wyrażeniach regularnych</h4>
-    <p>
-        Dlaczego używamy wyrażeń reguarnych?
+    <h4>Dlaczgo używamy wyrażeń regularnych?</h4>
+    <p> Pozwalają sprawdzić, czy dany tekst pasuje do wzoru.
+        \n Przydatne linki:
+        <ul>
+            <li>Wyrażenia regularne w dokumentacji Pythona 3: <a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a> </li>
+            <li>Oficjalny tutorial: <a href="https://docs.python.org/3/howto/regex.html">https://docs.python.org/3/howto/regex.html</a> </li>
+            <li>Sprawdzanie wzorców online: <a href="https://pythex.org">pythex.org</a> </li>
+        </ul>
     </p>
 
-    <h4> Wyrażenia regularne w Pythonie</h4>
-    <p></p>
 
+    <h4>Podstawowe oznaczenia </h4>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Znaczenie</th>
+            <th>Symbol</th>
+            <th>Znaczenie</th>
+            <th>Symbol</th>
+            <th>Znaczenie</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>\ </td>
+            <td> ignoruj znak specjalny</td>
+            <td> . </td>
+            <td> dowolny znak </td>
+            <td> ^ </td>
+            <td> pierwszy znak </td>
+        </tr>
 
-    <pre><code class="language-python">import re
-    </code></pre>
+        <tr>
+            <td> $ </td>
+            <td> ostatni znak </td>
+            <td> [a-z] </td>
+            <td> znak z zakresu a-z </td>
+            <td> a | b </td>
+            <td> a lub b </td>
+        </tr>
+
+        <tr>
+            <td> [^a] </td>
+            <td> dowolny znak różny od 'a' </td>
+            <td> () </td>
+            <td> łączenie wyrażeń </td>
+            <td> a+ </td>
+            <td> 'a' wystąpiło co najmniej jeden raz </td>
+        </tr>
+
+        <tr>
+            <td> a* </td>
+            <td> 'a' wystąpiło zero lub więcej razy </td>
+            <td> a? </td>
+            <td> 'a'wystąpiło 0 lub 1 raz</td>
+            <td> a{3} </td>
+            <td> 'a' wystąpiło dokładnie 3 razy </td>
+        </tr>
+        <tr>
+            <td> \d </td>
+            <td>  cyfra</td>
+            <td> \D </td>
+            <td> nie cyfra </td>
+            <td> \s </td>
+            <td> whitespace [\t\n\r\f\v] </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <p>Akceptuj dowolny znak</p>
+    <pre><code class="language-python">>>>import re
+>>> p = re.compile('.')
+>>> p
+re.compile('.')
+>>> m = p.match('A')
+>>> m
+&gt;_sre.SRE_Match object; span=(0, 1), match='A'>
+>>> m.group()
+'A'</code></pre>
+
+    <p>Akceptuj tekst zaczynający się od 'Hello'</p>
+    <pre><code class="language-python">>>> p = re.compile('^(Hello)[.]*')
+>>> p
+re.compile('^(Hello)[.]*')
+>>> m = p.match('Hello World')
+>>> m
+&gt;_sre.SRE_Match object; span=(0, 5), match='Hello'>
+>>> m = p.match('World')
+>>> m # m jest puste
+>>> m.group()
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+AttributeError: 'NoneType' object has no attribute 'group'</code></pre>
+
+    <p>Akceptuj datę w formacie 'dd-mm-rrrr'</p>
+    <pre><code class="language-python">>>> p
+re.compile('\\d\\d-\\d\\d]-\\d\\d\\d\\d')
+>>> m = p.match('22-12-2018')
+>>> m
+>>> p = re.compile('(\d\d)-(\d\d)-(\d\d\d\d)')
+>>> p
+re.compile('(\\d\\d)-(\\d\\d)-(\\d\\d\\d\\d)')
+>>> m = p.match('22-12-2018')
+>>> m
+&gt;_sre.SRE_Match object; span=(0, 10), match='22-12-2018'></code></pre>
+
 
 </template>
