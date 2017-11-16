@@ -1,17 +1,89 @@
 
 <template name="module11">
-    <h2>Moduł 11. Podstawy obsługi błędów</h2>
+    <h2>Moduł 11. Podstawy obsługi błędów i wyjątków</h2>
+    <p>Dokumentacja: <a href="https://docs.python.org/3/tutorial/errors.html">https://docs.python.org/3/tutorial/errors.html</a> </p>
+
     <h4>Błędy składniowe</h4>
+    <pre><code class="language-python">>>> def my_fun()
+  File "&gt;stdin>", line 1
+    def my_fun()
+               ^
+SyntaxError: invalid syntax
+</code></pre>
 
     <h4> Wyjątki</h4>
-    <p></p>
-    <h4>Obsługa wyjątków</h4>
-    <p></p>
-    <h4>Rzucanie wyjątków</h4>
-    <p></p>
-    <h4>Definiowanie własnych wyjątków</h4>
+    <p>Czyli błędy które powstają, nawet jeśli kod jest składniowo poprawny.</p>
+    <pre><code class="language-python"></code>>>> 1/0
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+ZeroDivisionError: division by zero
+>>> </pre>
 
-    <pre><code class="language-python">import re
-    </code></pre>
+    <pre><code class="language-python"></code>>>> 7*ta_zmienna_nie_jest_zadeklarowana
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+NameError: name 'ta_zmienna_nie_jest_zadeklarowana' is not defined
+</pre>
+
+    <h4>Obsługa wyjątków</h4>
+    <pre><code class="language-python">>>> def handle_err(a, b):
+...     try:
+...             a/b
+...             print("Nie ma błędu")
+...     except ZeroDivisionError:
+...             print("Jest ZeroDivisionError!")
+</code> </pre>
+
+    <pre><code class="language-python"></code>>>> handle_err(1,0)
+Jest ZeroDivisionError!</pre>
+    <pre><code class="language-python"></code>>>> handle_err(1,2)
+Nie ma błędu </pre>
+    <p>Klauzuli except może być kilka:</p>
+    <pre><code class="language-python">>>> def handle_err(a, b):
+...     try:
+...             a/b
+...             print("Nie ma błędu")
+...     except ZeroDivisionError:
+...             print("Jest ZeroDivisionError!")
+...     except TypeError:
+...             print("Jest TypeError!")
+</code> </pre>
+
+    <h4>Rzucanie wyjątków</h4>
+    <p>Polecenie <b>rise</b> pozwala programiście wymusić wystąpienie wyjątku.</p>
+    <pre><code class="language-python"></code>>>> raise NameError('HiThere')
+Traceback (most recent call last):
+  File "&gt;stdin>", line 1, in &gt;module>
+NameError: HiThere
+ </pre>
+    <p>Może być wykorzystane, do przekazania wyjątku dalej: </p>
+    <pre><code class="language-python"></code>>>> try:
+...     raise NameError('HiThere')
+... except NameError:
+...     print('An exception flew by!')
+...     raise
+...
+An exception flew by!
+Traceback (most recent call last):
+  File "&gt;stdin>", line 2, in &gt;module>
+NameError: HiThere
+ </pre>
+
+    <h4>Definiowanie własnych wyjątków</h4>
+    <pre><code class="language-python">class Error(Exception):
+    """Base class for exceptions in this module."""
+    pass
+
+class InputError(Error):
+    """Exception raised for errors in the input.
+
+    Attributes:
+        expression -- input expression in which the error occurred
+        message -- explanation of the error
+    """
+
+    def __init__(self, expression, message):
+        self.expression = expression
+        self.message = message</code> </pre>
 
 </template>
