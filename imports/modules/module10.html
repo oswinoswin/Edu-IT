@@ -4,10 +4,33 @@
     <p>Link do dokumentacji: <a href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></p>
 
     <h4>Tworzenie własnej klasy w Pythonie</h4>
-    <p></p>
+    <p>Pozwala na tworzenie własnych obiektów.</p>
 
+    <p>Definiowanie własnej klasy:</p>
+    <pre><code class="language-python">class ClassName:
+    &lt;statement-1>
+    .
+    .
+    .
+    &lt;statement-N></code></pre>
 
-    <pre><code class="language-python">import re
-    </code></pre>
+    <p>Przykład:</p>
+    <pre><code class="language-python">class MyClass:
+    """A simple example class"""
+    i = 12345
+
+    def f(self):
+        return 'hello world'</code></pre>
+
+    <p>Tworzenie instancji klasy:</p>
+    <pre><code class="language-python">instancja_klasy = MyClass()</code></pre>
+
+    <h4>Dodawanie atrybutów</h4>
+    <pre><code class="language-python">x.counter = 1
+while x.counter < 10:
+    x.counter = x.counter * 2
+print(x.counter)
+del x.counter</code></pre>
+
 
 </template>

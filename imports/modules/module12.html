@@ -1,25 +1,51 @@
 
 <template name="module12">
     <h2>Moduł 12. Sokety.</h2>
+    <h4>Co to są sockety?</h4>
+    <blockquote>
+        <p>Gniazdo w telekomunikacji (ang. socket) – pojęcie abstrakcyjne reprezentujące dwukierunkowy punkt końcowy połączenia. Dwukierunkowość oznacza możliwość wysyłania i odbierania danych. Wykorzystywane jest przez aplikacje do komunikowania się przez sieć w ramach komunikacji międzyprocesowej.
+
+            Gniazdo posiada trzy główne właściwości:
+
+            typ gniazda identyfikujący protokół wymiany danych
+            lokalny adres (np. adres IP, IPX, czy Ethernet)
+            opcjonalny lokalny numer portu identyfikujący proces, który wymienia dane przez gniazdo (jeśli typ gniazda pozwala używać portów)
+        </p>
+        <p>Wikipedia <a href="https://pl.wikipedia.org/wiki/Gniazdo_(telekomunikacja)">https://pl.wikipedia.org/wiki/Gniazdo_(telekomunikacja)</a> </p>
+    </blockquote>
+    <p>Python tutorial <a href="https://docs.python.org/3.6/howto/sockets.html">https://docs.python.org/3.6/howto/sockets.html</a> </p>
+    <p>Python dokumentacja <a href="https://docs.python.org/3/library/socket.html">https://docs.python.org/3/library/socket.html</a> </p>
+
     <h4>Rodzaje</h4>
     <p>
+        <ul>
+            <li>AF_UNIX</li>
+            <li>AF_INET</li>
+
+        </ul>
 
     </p>
 
-    <h4> Wyjątki</h4>
-    <p></p>
+    <h4>Tworzenie socketu:</h4>
+    <pre><code class="language-python"># create an INET, STREAMing socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# now connect to the web server on port 80 - the normal http port
+s.connect(("www.python.org", 80))</code></pre>
 
-    <h4>Stałe</h4>
-    <p></p>
+    <h4>Nasłuchiwanie na sockecie:</h4>
+    <pre><code class="language-python">while True:
+    # accept connections from outside
+    (clientsocket, address) = serversocket.accept()
+    # now do something with the clientsocket
+    # in this case, we'll pretend this is a threaded server
+    ct = client_thread(clientsocket)
+    ct.run()</code></pre>
 
-    <h4>Funkcje</h4>
-    <p></p>
-
-    <h4>Obiekty</h4>
-    <p></p>
+    <h4>Akceptowanie połączenia></h4>
+    <pre><code class="language-python">socket.accept()</code> </pre>
 
 
-    <pre><code class="language-python">import re
-    </code></pre>
+    <h4>Rozłączanie:</h4>
+    <pre><code class="language-python">socket.close()</code> </pre>
 
 </template>

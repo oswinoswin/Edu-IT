@@ -5,7 +5,7 @@
 
     <h4>Błędy składniowe</h4>
     <pre><code class="language-python">>>> def my_fun()
-  File "&gt;stdin>", line 1
+  File "&lt;stdin>", line 1
     def my_fun()
                ^
 SyntaxError: invalid syntax
@@ -15,13 +15,13 @@ SyntaxError: invalid syntax
     <p>Czyli błędy które powstają, nawet jeśli kod jest składniowo poprawny.</p>
     <pre><code class="language-python"></code>>>> 1/0
 Traceback (most recent call last):
-  File "&gt;stdin>", line 1, in &gt;module>
+  File "&lt;stdin>", line 1, in &lt;module>
 ZeroDivisionError: division by zero
 >>> </pre>
 
     <pre><code class="language-python"></code>>>> 7*ta_zmienna_nie_jest_zadeklarowana
 Traceback (most recent call last):
-  File "&gt;stdin>", line 1, in &gt;module>
+  File "&lt;stdin>", line 1, in &lt;module>
 NameError: name 'ta_zmienna_nie_jest_zadeklarowana' is not defined
 </pre>
 
@@ -53,7 +53,7 @@ Nie ma błędu </pre>
     <p>Polecenie <b>rise</b> pozwala programiście wymusić wystąpienie wyjątku.</p>
     <pre><code class="language-python"></code>>>> raise NameError('HiThere')
 Traceback (most recent call last):
-  File "&gt;stdin>", line 1, in &gt;module>
+  File "&lt;stdin>", line 1, in &lt;module>
 NameError: HiThere
  </pre>
     <p>Może być wykorzystane, do przekazania wyjątku dalej: </p>
@@ -65,7 +65,7 @@ NameError: HiThere
 ...
 An exception flew by!
 Traceback (most recent call last):
-  File "&gt;stdin>", line 2, in &gt;module>
+  File "&lt;stdin>", line 2, in &lt;module>
 NameError: HiThere
  </pre>
 
