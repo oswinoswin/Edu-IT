@@ -12,12 +12,30 @@
     </ul>
 
     <h4>Przykłady:</h4>
-    <p>Wypisywanie aktualnej daty:</p>
+    <p>Wypisanie aktualnej godziny: </p>
+    <pre><code class="language-python"></code>>>> time.strftime('%X')
+'09:15:12' </pre>
 
+    <p>Wypisywanie aktualnej daty:</p>
     <pre><code class="language-python">>>> import datetime
 >>> print "Current date and time: " , datetime.datetime.now()
 Current date and time:  2017-11-15 23:35:56.257383
 </code> </pre>
+
+
+
+    <p>Zamiana tekstu na datę:</p>
+    <pre><code class="language-python"></code>>>>my_date = datetime.datetime(2017,11,17)
+>>> my_date
+datetime.datetime(2017, 11, 17, 0, 0)</pre>
+
+
+    <p>Wypisanie dnia tygodnia:</p>
+    <pre><code class="language-python"></code>>>> my_date.weekday()
+4 #dzień tygodnia jako integer
+>>> my_date.strftime('%A')
+'Friday' # jako tekst
+</pre>
 
 <p>Odliczanie dni do Świąt</p>
     <pre><code class="language-python">>>> import datetime
@@ -30,6 +48,17 @@ datetime.timedelta(40)
 >>> days.days
 40
 </code> </pre>
+
+    <p>Sprawdzanie, która data jest wcześniejsza: </p>
+    <pre><code class="language-python"></code>>>> my_date
+datetime.datetime(2017, 11, 17, 0, 0)
+>>> christmas = datetime.datetime(2017,12,25)
+>>> christmas
+datetime.datetime(2017, 12, 25, 0, 0)
+>>> my_date &lt; christmas
+True</pre>
+
+
 
 
 
